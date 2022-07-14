@@ -19,8 +19,8 @@
 
 1. Clone this repository to your machine
 2. Install [Metro](https://metroforsteam.com)
-3. Copy a flavour from within `themes/`
-4. Move the `.styles` file into `Steam\skins\Metro for Steam\`
+3. Copy a flavour from within [themes/](https://github.com/Dukeatron/steam/tree/main/themes)
+4. Move any one of the theme files that you like into `Steam\skins\Metro for Steam\`
 5. Restart Steam
 6. Select your theme and then restart, again
 7. Enjoy your theme!
