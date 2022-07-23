@@ -31,7 +31,7 @@
 
 - [x] Find a suitable theme to edit
 - [ ] Find a way to completely edit Steam's colorschemes
-- [ ] Merge with main CTP org
+- [x] Merge with main CTP org
 
 ## 💝 Thanks to
 
