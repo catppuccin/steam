@@ -27,6 +27,12 @@
 
 **NOTE for step 3: If you have locally cloned the repository using git, select a theme from within the themes folder**
 
+## TODO
+
+[ x ] Find a suitable theme to edit
+[   ] Find a way to completely edit Steam's colorschemes
+[  ] Merge with main CTP org
+
 ## 💝 Thanks to
 
 - [Dukeatron2000](https://github.com/Dukeatron)
