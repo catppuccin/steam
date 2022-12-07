@@ -17,15 +17,12 @@
 
 ## Usage
 
-1. Clone this repository to your machine
-2. Install [Metro](https://github.com/minischetti/metro-for-steam)
-3. Copy a flavour from within [themes/](https://github.com/Dukeatron/steam/tree/main/themes)
-4. Move any one of the theme files that you like into `Steam\skins\Metro for Steam\`
-5. Restart Steam
-6. Select your theme and then restart, again
+1. Install [Metro](https://github.com/minischetti/metro-for-steam)
+2. Clone this repository to your machine (or [download](https://github.com/catppuccin/steam/archive/main.zip) as an archive)
+3. Copy a flavour from within [themes/](/themes/) to `Steam\skins\Metro for Steam\`
+4. Rename that file to `custom.styles`, overriding the existing one
+5. Select the Metro theme and restart Steam
 7. Enjoy your theme!
-
-**NOTE for step 3: If you have locally cloned the repository using git, select a theme from within the themes folder**
 
 ### NOTE: [Metro](https://github.com/minischetti/metro-for-steam) is currently broken, use the [community patch](https://github.com/redsigma/UPMetroSkin/)
 
