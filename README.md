@@ -1,3 +1,4 @@
+
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
@@ -18,18 +19,18 @@
 ## Usage
 
 1. Install [Metro](https://github.com/minischetti/metro-for-steam)
-2. Clone this repository to your machine (or [download](https://github.com/catppuccin/steam/archive/main.zip) as an archive)
-3. Copy a flavour from within [themes/](/themes/) to `Steam\skins\Metro for Steam\`
-4. Rename that file to `custom.styles`, overriding the existing one
+2. Install [Steam-library](https://github.com/AikoMidori/steam-library) to the metro installation
+3. Clone this repository to your machine (or [download](https://github.com/catppuccin/steam/archive/main.zip) as an archive)
+4. Copy the contents of one of the flavors inside [themes/](/themes/) to `Steam\skins\Metro for Steam\`
 5. Select the Metro theme and restart Steam
-7. Enjoy your theme!
+6. Enjoy your theme!
 
 ### NOTE: [Metro](https://github.com/minischetti/metro-for-steam) is currently broken, use the [community patch](https://github.com/redsigma/UPMetroSkin/)
 
 ## TODO
 
 - [x] Find a suitable theme to edit
-- [ ] Find a way to completely edit Steam's colorschemes
+- [x] Find a way to completely edit Steam's colorschemes
 - [x] Merge with main CTP org
 - [ ] Add screenshots for all flavours
 	
