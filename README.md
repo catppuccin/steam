@@ -32,7 +32,7 @@
 - [x] Find a suitable theme to edit
 - [x] Find a way to completely edit Steam's colorschemes
 - [x] Merge with main CTP org
-- [ ] Add screenshots for all flavours
+- [x] ~~Add screenshots for all flavours~~
 	
 ## 💝 Thanks to
 
