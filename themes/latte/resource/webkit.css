@@ -73,7 +73,6 @@
         --FriendInGameIconPosition: -12px;  /* Set 12px If Icon Is Enabled */
 
 }
-
 @media only screen and (min-width:3000px){
 .responsive_page_content{-webkit-transform:scale(2)!important;-webkit-transform-origin:50% 00% 0!important}
 .modal_frame{width:66%!important;height:80%!important}
@@ -1345,12 +1344,26 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
 
 /* MINI PROFILES*/
 
+.FavoriteFriend_GameIcon {
+  position: absolute;
+  right: -4px;
+  top: 24px;
+}
+
+.avatarStatus {
+    border: 0px !important;
+    height: 48px !important;
+    width: 48px !important;
+  position: absolute !important;
+  left: -1px !important;
+  top: -1px !important;
+}
+
 /* Changes User Avatar Game Page Communnity Photos */
 .steamavatar_avatar_3h-QR {
-    border-radius: 60px !important;
     border: 0px !important;
-    height: 28px !important;
-    width: 28px !important;
+    height: 48px !important;
+    width: 48px !important;
 }
 
 /* Changes User Miniprofile Avatar */
@@ -1400,9 +1413,9 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
 
 .online .steamavatar_avatarStatus_3xUpb {
     background: rgb(var(--online)) !important;
-    border-radius: 50px !important;
-    width: 30px !important;
-    height: 30px !important;
+    border-radius: 0px !important;
+    width: 48px !important;
+    height: 48px !important;
     left: -1px !important;
     top: -1px !important;
     z-index: -1 !important;
@@ -1410,9 +1423,9 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
 
 .ingame .steamavatar_avatarStatus_3xUpb {
     background: rgb(var(--ingame)) !important;
-    border-radius: 50px !important;
-    width: 30px !important;
-    height: 30px !important;
+    border-radius: 0px !important;
+    width: 48px !important;
+    height: 48px !important;
     left: -1px !important;
     top: -1px !important;
     z-index: -1 !important;
@@ -1567,11 +1580,8 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
     color: rgb(var(--lightergrey)) !important;
   }
 
-  .gamelistsectionheader_Container_2sYIg {
-    background: linear-gradient(to right, rgb(var(--surfaceone)) 40%, rgba(var(--surfaceone), 0.25) 100%) !important;
-  }
-
   .gamelistsectionheader_Container_2sYIg.gamelistsectionheader_HoverOverlay_2zGph {
+    background-color: rgb(var(--darkgrey)) !important;
     color: rgb(var(--link)) !important;
   }
 
@@ -1819,7 +1829,7 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
   }
 
   .collapseicon_CollapseIconParent_ehAsU .collapseicon_Container_3SFRZ {
-  stroke: rgb(var(--overlaytwo)) !important;
+  stroke: rgb(var(--white)) !important;
   }
 
   .gamelistsectionheader_SectionHeaderContent_3cV3O {
