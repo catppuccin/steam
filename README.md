@@ -1,4 +1,5 @@
 
+
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
@@ -15,6 +16,25 @@
 <p align="center">
 	<img src="https://raw.githubusercontent.com/Dukeatron/steam/main/assets/ss.png"/>
 </p>
+
+## Previews
+
+<details>
+<summary>🌻 Latte</summary>
+<img src="https://raw.githubusercontent.com/Oman395/steam/main/assets/latte.png"/>
+</details>
+<details>
+<summary>🪴 Frappé</summary>
+<img src="https://raw.githubusercontent.com/Oman395/steam/main/assets/frappe.png"/>
+</details>
+<details>
+<summary>🌺 Macchiato</summary>
+<img src="https://raw.githubusercontent.com/Oman395/steam/main/assets/macchiato.png"/>
+</details>
+<details>
+<summary>🌿 Mocha</summary>
+<img src="https://raw.githubusercontent.com/Oman395/steam/main/assets/mocha.png"/>
+</details>
 
 ## Usage
 
