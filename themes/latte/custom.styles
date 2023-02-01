@@ -1,5 +1,7 @@
 // TODO: Latte theme is broken, because I can't figure out how to change the
-// buttons on the top bar (i.e. the steam button or the 3 bars)
+// buttons on the top bar
+
+// For now, I'm just darkening the top bar
 
 "custom.styles"{
     colors{
@@ -48,8 +50,8 @@
 
 /////////////////////////////////////
 //======Base Background Color======//
-		ClientBG=Base
-		ClientBGTransparent=Base
+		ClientBG=Surface2
+		ClientBGTransparent=Surface2
 
 
 /////////////////////////
@@ -115,7 +117,7 @@
 
 ////////////////////////////////
 //======Drop Menus===========//
-		bgMenu=ClientBG
+		bgMenu=Base
 
 		itemMenu=Text
 		itemMenu_a=Rosewater
@@ -127,7 +129,7 @@
 //////////////////////////////////
 //======Tooltip Panel===========//
 		titleToolTip=Text
-		bgToolTip=ClientBG
+		bgToolTip=Base
 
 		textToolTip=Subtext0
 		bgTitleToolTip=none
@@ -281,7 +283,7 @@
 
 /////////////////////////////
 //======Notifications======//
-		notifBG=ClientBG
+		notifBG=Base
 		notifOverlayBG="5 5 5 229.5"
 
 

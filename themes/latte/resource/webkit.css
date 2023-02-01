@@ -23,7 +23,7 @@
         --gamelist: var(--surfaceone), 255;      /* Change The Color Of Your Game List Selections */
         --scrollbar: var(--blue), 255;     /* Change The Color Of Your Scrollbar */
         --backdropblur: var(--surfacetwo), 0.3;
-        --libraryhome: var(--blue), 255;   /* Library Name Text Color */
+        --libraryhome: var(--flamingo), 255;   /* Library Name Text Color */
         --titlehover: 00, 00, 00, 00;
         --gamehover: 255, 255, 255;
         --offline: 145, 145, 145;
@@ -1567,8 +1567,11 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
     color: rgb(var(--lightergrey)) !important;
   }
 
+  .gamelistsectionheader_Container_2sYIg {
+    background: linear-gradient(to right, rgb(var(--surfaceone)) 40%, rgba(var(--surfaceone), 0.25) 100%) !important;
+  }
+
   .gamelistsectionheader_Container_2sYIg.gamelistsectionheader_HoverOverlay_2zGph {
-    background-color: rgb(var(--darkgrey)) !important;
     color: rgb(var(--link)) !important;
   }
 
@@ -1816,7 +1819,7 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
   }
 
   .collapseicon_CollapseIconParent_ehAsU .collapseicon_Container_3SFRZ {
-  stroke: rgb(var(--white)) !important;
+  stroke: rgb(var(--overlaytwo)) !important;
   }
 
   .gamelistsectionheader_SectionHeaderContent_3cV3O {
