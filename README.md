@@ -21,19 +21,19 @@
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="https://raw.githubusercontent.com/Oman395/steam/main/assets/latte.png"/>
+<img src="https://raw.githubusercontent.com/catppuccin/steam/main/assets/latte.png"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="https://raw.githubusercontent.com/Oman395/steam/main/assets/frappe.png"/>
+<img src="https://raw.githubusercontent.com/catppuccin/steam/main/assets/frappe.png"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="https://raw.githubusercontent.com/Oman395/steam/main/assets/macchiato.png"/>
+<img src="https://raw.githubusercontent.com/catppuccin/steam/main/assets/macchiato.png"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="https://raw.githubusercontent.com/Oman395/steam/main/assets/mocha.png"/>
+<img src="https://raw.githubusercontent.com/catppuccin/steam/main/assets/mocha.png"/>
 </details>
 
 ## Usage
