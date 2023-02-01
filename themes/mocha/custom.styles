@@ -1,0 +1,306 @@
+"custom.styles"{
+    colors{
+        //===Base Catpuccin Colors (macchiato)===//
+        Rosewater="245 224 220 255"
+        Flamingo="242 205 205 255"
+        Pink="245 194 231 255"
+        Mauve="203 166 247 255"
+        Red="243 139 168 255"
+        Maroon="235 160 172 255"
+        Peach="250 179 135 255"
+        Yellow="249 226 175 255"
+        Green="166 227 161 255"
+        Teal="148 226 213 255"
+        Sky="137 220 235 255"
+        Sapphire="116 199 236 255"
+        Blue="137 180 250 255"
+        Lavender="180 190 254 255"
+        Text="205 214 244 255"
+        Subtext1="186 194 222 255"
+        Subtext0="166 173 200 255"
+        Overlay2="147 153 178 255"
+        Overlay1="127 132 156 255"
+        Overlay0="108 112 134 255"
+        Surface2="88 91 112 255"
+        Surface1="69 71 90 255"
+        Surface0="49 50 68 255"
+        Base="30 30 46 255"
+        Mantle="24 24 37 255"
+        Crust="17 17 27 255"
+        Focus="255 255 255 255"
+
+
+/////////////////////////
+//===Specific Colors===//
+		W10close_Red_h=Red
+		W10close_Red_p=Red
+
+		Grey1="40 40 40 255"
+		Grey2="48 48 48 255"
+		Grey3="75 75 75 255"
+
+		green50="87 119 15 255"
+		green=Green
+		green_bright="0 255 0 255"
+
+/////////////////////////////////////
+//======Base Background Color======//
+		ClientBG=Base
+		ClientBGTransparent=Base
+
+
+/////////////////////////
+//======Scrollbar======//
+		scroll=Overlay0
+		scroll_a=Overlay2
+
+
+////////////////////
+//======Text======//
+		text=Text
+		text_a=Rosewater
+		url=Text
+		url_a=Rosewater
+
+
+/////////////////////////////
+//======Friends Panel======//
+// Not entirely sure what this does so I'll set everything to default text color
+		Friends_InGame=Text
+		Friends_Online=Text
+		Friends_Offline=Text
+		Friends_Golden=Text
+
+///////////////////////////////////////
+//======Nickname/Balance Button======//
+		ingameNick=Friends_InGame
+		onlineNick=Friends_Online
+		offlineNick=Friends_Offline
+
+        // I won't change the ones that are set to none (for now)
+		bgIngameNick=none
+		bgOnlineNick=none
+		bgOfflineNick=none
+
+		bgIngameNearAvatar=Friends_InGame
+		bgOnlineNearAvatar=Friends_Online
+		bgOfflineNearAvatar=Friends_Offline
+
+		textCash=Subtext0
+		bgTextCash=none
+
+
+////////////////////////////////////
+//======Steam Windows Border======//
+        // Not changing for now, again, not sure how it would impact thngs
+		frameBorder="15 15 15 255"
+		frameBorder_a=frameBorder
+
+
+//////////////////////////////////
+//======Top Bar Background======//
+		Header_Dark=Base
+
+///////////////////////////////
+//======Top Bar Buttons======//
+        // TODO: I can't figure out how to make it highlight the one you have selected when you hover over it
+		mainButton=Rosewater
+		mainButton_h=Subtext0 // Main button hover
+		mainButton_c=Subtext1 // Main button selected
+		mainButton_d=Surface0 // I literally haven't the foggiest idea?????
+
+
+////////////////////////////////
+//======Drop Menus===========//
+		bgMenu=ClientBG
+
+		itemMenu=Text
+		itemMenu_a=Rosewater
+
+		bgItemMenu=none
+		bgItemMenu_a=none
+
+
+//////////////////////////////////
+//======Tooltip Panel===========//
+		titleToolTip=Text
+		bgToolTip=ClientBG
+
+		textToolTip=Subtext0
+		bgTitleToolTip=none
+		bgTextToolTip=none
+
+
+///////////////////////////////////////
+//======Library Game/Music List======//
+		bgGameList=Mantle
+		bgMusicList=bgGameList
+
+		game_installed=Text
+		game_installed_hover=Subtext1
+		game_installed_selected=Subtext0
+
+		game_shortcut=game_installed
+		game_shortcut_hover=game_installed_hover
+		game_shortcut_selected=game_installed_selected
+
+		game_mod=game_installed
+		game_mod_hover=game_installed_hover
+		game_mod_selected=game_installed_selected
+
+		game_uninstalled=Subtext0
+		game_uninstalled_hover=Subtext1
+		game_uninstalled_selected=Text
+
+		game_run=Focus
+		game_run_hover=Focus
+		game_run_selected=white
+
+
+////////////////////////////////////////
+//======Steam Detail View Panels======//
+		bgPanel=Mantle
+		bgLaunchPanel=bgPanel
+
+		titleGame=Subtext1
+		bgTitleGame=none
+
+		//Launch
+		lastplayedLaunchPanel=text
+		timeLaunchPanel=White75
+
+		//Friends
+		titleFriendsPanel=Subtext1
+		bgTitleFriendsPanel=none
+
+		//Achievements
+		titleAchievementPanel=Subtext1
+		bgTitleAchievementPanel=none
+
+		recentAchievementPanel=Text
+		bgRecentAchievementPanel=none
+
+		progressAchievementPanel=Text
+		bgProgressAchievementPanel=Focus
+
+		//Workshop
+		itemWorkshopPanel=Text
+		bgItemWorkshopPanel=Crust
+
+		//DLC
+		textDLCPanel=Text
+		highlightDLCPanel=Subtext1
+		installedDLCPanel=Subtext0
+		uninstalledDLCPanel=Text
+
+		//News
+		titleNewsPanel=Subtext1
+		bgTitleNewsPanel=none
+
+		textAuthorNewsPanel=text
+		bgAuthorNewsPanel=none
+
+		textNewsPanel=Text
+		urlTextNewsPanel=textNewsPanel
+		urlTextNewsPanel_a=Rosewater
+		boldTextNewsPanel=Focus
+
+		overlay_bgTitleNewsPanel=none
+		overlay_titleNewsPanel=Subtext0
+		overlay_titleNewsPanel_a=Rosewater
+		overlay_authorNewsPanel=Subtext1
+
+
+/////////////////////////////////////////////////////////
+//======Steam Detail View Links/Custom Categories======//
+		titleColumn=Subtext1
+		bgTitleColumn=none
+
+		textColumn=Text
+		textColumn_a=Rosewater
+		bgTextColumn=none
+		bgTextColumn_a=Rosewater
+		tagColumn=White50
+		bgTagColumn=none
+
+///////////////////////////////
+//======Steam Grid View======//
+		gridInstalled=Friends_Online
+		gridRunning=Friends_InGame
+		gridUninstalled=none
+		gridUpdating=Focus
+		gridShortcut=White
+		gridMod=Friends_Golden
+
+//////////////////////////
+//======List Panel======//
+		bgList_a=Overlay0
+		bgHeaderList=Overlay1
+		bgHeaderList_a=bgHeaderList
+
+		textHeaderList=Text
+		textHeaderList_a=Rosewater
+
+		textList=Text
+		textList_a=Rosewater
+		textList_d=Text
+
+
+//////////////////////////////////////////////
+//======Divider / List Panel Separator======//
+		Dividers=Lavender
+		Separators=frameBorder
+
+
+//////////////////////////////
+//======Downloads Page======//
+		appName=text
+		bgAppName=none
+
+		statusDownload=text
+		bgStatusDownload=none
+
+
+////////////////////////////////
+//======Overlay Elements======//
+		OverlayBackground="0 0 0 127.5"
+		OverlayPanels="0 0 0 127.5"
+		OverlayClock="255 255 255 255"
+
+
+///////////////////////////////////////
+//======Compact Overlay Buttons======//
+		OverlaySideButtons="255 255 255 255"
+		OverlaySideButtons_h="255 255 255 144.75"
+		OverlaySideButtons_c="255 255 255 144.75"
+		OverlayHover05="255 255 255 12.75"
+
+
+/////////////////////////////
+//======Notifications======//
+		notifBG=ClientBG
+		notifOverlayBG="5 5 5 229.5"
+
+
+//////////////////////////////////
+//======Chat Window border======//
+		chatframe=white50
+
+
+//////////////////////////
+//======Search Bar======//
+		TextEntry=Text
+
+
+/////////////////////////////////////////////////
+//======Recent/Installed/Tools Categories======//
+		CategoryBG=none
+		CategoryText=Focus
+
+
+///////////////////////////////////////
+//======URL Secure / Not Secure======//
+		SecureURL=Rosewater
+		NotSecureURL=Rosewater
+	}
+}
