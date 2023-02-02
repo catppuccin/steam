@@ -38,14 +38,16 @@
 
 ## Usage
 
-1. Install [Metro](https://github.com/minischetti/metro-for-steam)
-2. Install [Steam-library](https://github.com/AikoMidori/steam-library) to the metro installation
-3. Clone this repository to your machine (or [download](https://github.com/catppuccin/steam/archive/main.zip) as an archive)
-4. Copy the contents of one of the flavors inside [themes/](/themes/) to `Steam\skins\Metro for Steam\`
-5. Select the Metro theme and restart Steam
-6. Enjoy your theme!
-
-### NOTE: [Metro](https://github.com/minischetti/metro-for-steam) is currently broken, use the [community patch](https://github.com/redsigma/UPMetroSkin/)
+1.  Download [SFP (formerly Steam Friends Patcher)](https://github.com/PhantomGamers/SFP/releases/latest)
+2.  Extract the files, run “SFP_UI”, then press the “Patch” button
+3.  Download the [original metro for steam](https://github.com/minischetti/metro-for-steam/releases/tag/v4.4), extract to `~/.steam/steam/skins/[name]` (linux) or `c:\Program Files\Steam\skins (windows)`
+4.  Download the [latest release of the metro patch](https://github.com/redsigma/UPMetroSkin/tags)
+5.  Extract the contents of [Unofficial 4.x patch/Main Files](https://github.com/redsigma/UPMetroSkin/tree/master/Unofficial%204.x%20Patch/Main%20Files%20[Install%20First]) into the folder you put the original metro. Make sure to replace/overwrite, rather than skipping!
+6.  Download your selected theme’s folder, located in [themes/](https://github.com/catppuccin/steam/blob/main/themes)
+7.  Copy all contents of this folder into the folder with metro
+8.  In steam, go to settings->interface, then change skin to the name of your metro folder. If you did this right, steam should prompt you to restart-- press OK, and steam should restart.
+9.  Enjoy your new theme!
+### NOTE: [steam-library](https://github.com/AikoMidori/steam-library), which the library styling is based on, has strange steps for windows-- until there is a separate implementation that accounts for this, windows users will only be able to style the header, and some of the panels.
 
 ## TODO
 
