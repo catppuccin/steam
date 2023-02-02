@@ -1345,12 +1345,26 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
 
 /* MINI PROFILES*/
 
+.FavoriteFriend_GameIcon {
+  position: absolute;
+  right: -4px;
+  top: 24px;
+}
+
+.avatarStatus {
+    border: 0px !important;
+    height: 48px !important;
+    width: 48px !important;
+  position: absolute !important;
+  left: -1px !important;
+  top: -1px !important;
+}
+
 /* Changes User Avatar Game Page Communnity Photos */
 .steamavatar_avatar_3h-QR {
-    border-radius: 60px !important;
     border: 0px !important;
-    height: 28px !important;
-    width: 28px !important;
+    height: 48px !important;
+    width: 48px !important;
 }
 
 /* Changes User Miniprofile Avatar */
@@ -1400,9 +1414,9 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
 
 .online .steamavatar_avatarStatus_3xUpb {
     background: rgb(var(--online)) !important;
-    border-radius: 50px !important;
-    width: 30px !important;
-    height: 30px !important;
+    border-radius: 0px !important;
+    width: 48px !important;
+    height: 48px !important;
     left: -1px !important;
     top: -1px !important;
     z-index: -1 !important;
@@ -1410,9 +1424,9 @@ body.v6.winter_sale_home h2.winter{margin-left:-40px!important}
 
 .ingame .steamavatar_avatarStatus_3xUpb {
     background: rgb(var(--ingame)) !important;
-    border-radius: 50px !important;
-    width: 30px !important;
-    height: 30px !important;
+    border-radius: 0px !important;
+    width: 48px !important;
+    height: 48px !important;
     left: -1px !important;
     top: -1px !important;
     z-index: -1 !important;
