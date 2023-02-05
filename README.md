@@ -51,10 +51,10 @@
 
 ## TODO
 
-- [x] Find a suitable theme to edit
-- [x] Find a way to completely edit Steam's colorschemes
-- [x] Merge with main CTP org
-- [x] ~~Add screenshots for all flavours~~
+- [] Color all pages
+- [] Find a way to edit the icons in the header
+- [] Look into an install script
+- [] Look into better windows support
 	
 ## 💝 Thanks to
 
