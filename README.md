@@ -51,7 +51,7 @@
 
 ## TODO
 
-- [ ] Color all pages
+- [x] Color all pages
 - [ ] Find a way to edit the icons in the header
 - [ ] Look into an install script
 - [ ] Look into better windows support
