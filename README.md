@@ -48,6 +48,7 @@
 8.  In steam, go to settings->interface, then change skin to the name of your metro folder. If you did this right, steam should prompt you to restart-- press OK, and steam should restart.
 9.  Enjoy your new theme!
 ### NOTE: [steam-library](https://github.com/AikoMidori/steam-library), which the library styling is based on, has strange steps for windows-- until there is a separate implementation that accounts for this, windows users will only be able to style the header, and some of the panels.
+### NOTE 2: Latte is extremely painful to theme for, so at the moment it isn't nearly as complete as the dark themes.
 
 ## TODO
 
