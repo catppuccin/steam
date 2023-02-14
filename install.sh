@@ -2,6 +2,7 @@
 
 # MAKE DIRECTORY SO THAT YOUR HOME DIRECTORY DOESN'T GET DIRTY
 
+cd /home/
 mkdir -p junk-drawer
 cd junk-drawer
 
@@ -16,7 +17,7 @@ echo "5) Void Linux"
 echo "6) NixOS"
 echo "7) Alpine Linux"
 echo "8) openSUSE Linux"
-read -P "Please input a number between 1 and 8: " DISTRO
+read -p "Please input a number between 1 and 8: " DISTRO
 case $DISTRO in 
 [1])
 	pacman -S git wget --needed
@@ -117,7 +118,6 @@ esac
 git clone https://github.com/catppuccin/steam
 cd steam
 cp -r $FLAVOR $METRO
-clear
 
 # Gives the user instructions to complete the installation
 
