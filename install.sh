@@ -1,8 +1,15 @@
 #!/bin/bash
 
+# CHECKS FOR SUDO ACCESS (added because of those who have seperate partitions for /home and /root) 
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please don't run as root" && exit
+  exit
+fi
+
 # MAKE DIRECTORY SO THAT YOUR HOME DIRECTORY DOESN'T GET DIRTY
 
-cd /home/
+cd /home/$USER
 mkdir -p junk-drawer
 cd junk-drawer
 
@@ -20,35 +27,35 @@ echo "8) openSUSE Linux"
 read -p "Please input a number between 1 and 8: " DISTRO
 case $DISTRO in 
 [1])
-	pacman -S git wget --needed
+	sudo pacman -S git wget --needed
 	;;
 
 [2])
-  dnf install wget git
+  sudo dnf install wget git
 	;;
 
 [3])
-  emerge wget git
+  sudo emerge wget git
   ;;
 
 [4])
-	apt install wget git
+	sudo apt install wget git
 	;;
   
 [5])
-  xbps-install wget git
+  sudo xbps-install wget git
   ;;
   
 [6])
-  nix-shell -p wget git
+  sudo nix-shell -p wget git
   ;;
   
 [7])
-  apk add wget git
+  sudo apk add wget git
   ;;
   
 [8])
-  zypper install wget git
+  sudo zypper install wget git
   ;;
 esac
 
@@ -73,7 +80,7 @@ rm -f ./v4.4.zip
 # then makes a folder in the .steam/steam/skins directory called 'metro' to unzip metro to.
 # Also makes the skins folder if it doesn't exist
 
-read -P "Where is your steam installation? Copy the path (e.g. /home/thebearodactyluwu/.var/app/com.valvesoftware.Steam/.steam) and paste it here: " steaminstall
+read -p "Where is your steam installation? Copy the path (e.g. /home/thebearodactyluwu/.steam) and paste it here: " steaminstall
 mkdir -p $steaminstall/steam/skins/metro
 
 # Sets the METRO variable to the previously created metro folder, then copies the 
@@ -133,6 +140,11 @@ echo
 echo "    On Steam!"
 clear
 sleep 15
+
+# Removes the junk-drawer folder from earlier
+
+cd /home/$USER
+rm -rf junk-drawer
 
 # Little easter egg for those who don't mind waiting about 15 seconds a lot 
 echo "Why're you still here? You"
