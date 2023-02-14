@@ -7,7 +7,49 @@ cd junk-drawer
 
 # Install git and wget
 
-pacman -S wget git --needed
+echo "What distro do you use?"
+echo "1) Arch Linux"
+echo "2) Fedora Linux"
+echo "3) Gentoo/Funtoo Linux"
+echo "4) Ubuntu/Debian and Ubuntu/Debian based distros"
+echo "5) Void Linux"
+echo "6) NixOS"
+echo "7) Alpine Linux"
+echo "8) openSUSE Linux"
+read -P "Please input a number between 1 and 8: " DISTRO
+case $DISTRO in 
+[1])
+	pacman -S git wget --needed
+	;;
+
+[2])
+  dnf install wget git
+	;;
+
+[3])
+  emerge wget git
+  ;;
+
+[4])
+	apt install wget git
+	;;
+  
+[5])
+  xbps-install wget git
+  ;;
+  
+[6])
+  nix-shell -p wget git
+  ;;
+  
+[7])
+  apk add wget git
+  ;;
+  
+[8])
+  zypper install wget git
+  ;;
+esac
 
 # Download, unzip, and execute SPF (formerly Steam Friends Patcher)
 
@@ -96,7 +138,6 @@ sleep 15
 echo "Why're you still here? You"
 echo "should be playing ULTRAKILL"
 echo "or something!"
-clear
 
 # Opens steam for the user. Good for procrastinators and such.
 # Remove "<<lol" and the last line (should say lol as well) to enable this
