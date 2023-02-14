@@ -76,6 +76,9 @@ git clone https://github.com/catppuccin/steam
 cd steam
 cp -r $FLAVOR $METRO
 clear
+
+# Gives the user instructions to complete the installation
+
 echo "Steps to install theme:"
 echo " 1) Open Steam and go into settings"
 echo " 2) Change the skin to metro"
@@ -87,18 +90,23 @@ echo "    Catppuccin " $FLAVOUR
 echo
 echo "    On Steam!"
 clear
-sleep 5
+sleep 15
 
-# Little easter egg :P
-echo "Why're you still here?"
-echo "You should be playing ULTRAKILL"
+# Little easter egg for those who don't mind waiting about 15 seconds a lot 
+echo "Why're you still here? You"
+echo "should be playing ULTRAKILL"
 echo "or something!"
 clear
 
 # Opens steam for the user. Good for procrastinators and such.
-# Comment if you don't procrastinate
+# Remove "<<lol" and the last line (should say lol as well) to enable this
 
+<<lol
 echo "Fine. i'll open Steam for you."
 clear
 flatpak run com.valvesoftware.Steam
+lol
+
+# Stops the script
+
 exit
