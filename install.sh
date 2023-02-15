@@ -27,35 +27,35 @@ echo "8) openSUSE Linux"
 read -p "Please input a number between 1 and 8: " DISTRO
 case $DISTRO in 
 [1])
-	sudo pacman -S git wget --needed
+	sudo pacman -S git wget unzip --needed
 	;;
 
 [2])
-  sudo dnf install wget git
+  sudo dnf install wget git unzip
 	;;
 
 [3])
-  sudo emerge wget git
+  sudo emerge wget git unzip
   ;;
 
 [4])
-	sudo apt install wget git
+	sudo apt install wget git unzip
 	;;
   
 [5])
-  sudo xbps-install wget git
+  sudo xbps-install wget git unzip
   ;;
   
 [6])
-  sudo nix-shell -p wget git
+  sudo nix-shell -p wget git unzip
   ;;
   
 [7])
-  sudo apk add wget git
+  sudo apk add wget git unzip
   ;;
   
 [8])
-  sudo zypper install wget git
+  sudo zypper install wget git unzip
   ;;
 esac
 
