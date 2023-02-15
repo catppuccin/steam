@@ -39,5 +39,5 @@ else{
     $Flavor = Read-Host -Prompt "Please type one of the following (CASE SENSITIVE): frappe, latte, macchiato, mocha"
     Copy-Item -Path $Flavor -Destination 'C:\Program Files\Steam\skins\metro' -Recurse
 }
-
+Remove-Item 'C:\tmp' -Recurse
 exit
