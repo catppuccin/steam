@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 MD C:\tmp
 CD C:\tmp
 $sfpsource = 'https://github.com/PhantomGamers/SFP/releases/download/0.0.14/SFP_UI-SelfContained-win10-x64.zip'
