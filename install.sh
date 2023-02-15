@@ -126,7 +126,7 @@ cp -r $FLAVOR $METRO
 
 # Gives the user instructions to complete the installation
 
-echo "Steps to install theme:"
+echo "Steps to finalize the installation:"
 echo " 1) Open Steam and go into settings"
 echo " 2) Change the skin to metro"
 echo " 3) Steam will prompt you to restart!"
