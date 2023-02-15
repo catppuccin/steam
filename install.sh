@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # CHECKS FOR SUDO ACCESS (added because of those who have seperate partitions for /home and /root) 
 
