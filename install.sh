@@ -81,7 +81,7 @@ rm -f ./v4.4.zip
 # Also makes the skins folder if it doesn't exist
 
 read -p "Where is your steam installation? Copy the path (e.g. /home/thebearodactyluwu/.steam) and paste it here: " steaminstall
-mkdir -p $steaminstall/steam/skins/metro
+mkdir -p "$steaminstall/steam/skins/metro"
 
 # Sets the METRO variable to the previously created metro folder, then copies the 
 # extracted contents of metro to said metro folder
