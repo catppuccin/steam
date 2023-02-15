@@ -2,7 +2,7 @@
 
 # CHECKS FOR SUDO ACCESS (added because of those who have seperate partitions for /home and /root) 
 
-if [ "$EUID" -ne 0 ]
+if [ "$EUID" -eq 0 ]
   then echo "Please don't run as root" && exit
   exit
 fi
