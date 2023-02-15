@@ -4,6 +4,7 @@ $sfpsource = 'https://github.com/PhantomGamers/SFP/releases/download/0.0.14/SFP_
 $sfpdestination = 'C:\tmp\sfp_ui.zip'
 Invoke-WebRequest -Uri $sfpsource -OutFile $sfpdestination
 Expand-Archive -Path sfp_ui.zip -DestinationPath C:\tmp
+.\SFP_UI.exe
 $metrosource = 'https://github.com/minischetti/metro-for-steam/archive/refs/tags/v4.4.zip'
 $metrodestination = 'C:\tmp\metro.zip'
 Invoke-WebRequest -Uri $metrosource -OutFile $metrodestination
