@@ -9,9 +9,7 @@ fi
 
 # MAKE DIRECTORY SO THAT YOUR HOME DIRECTORY DOESN'T GET DIRTY
 
-cd /home/$USER
-mkdir -p junk-drawer
-cd junk-drawer
+cd $(mktemp -d)
 
 # Install git and wget
 
