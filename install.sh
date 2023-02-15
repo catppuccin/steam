@@ -59,12 +59,12 @@ case $DISTRO in
   ;;
 esac
 
-# Download, unzip, and execute SPF (formerly Steam Friends Patcher)
+# Download, unzip, and execute SFP (formerly Steam Friends Patcher)
 
 wget https://github.com/PhantomGamers/SFP/releases/download/0.0.14/SFP_UI-SelfContained-linux-x64.zip
 unzip SFP_UI-SelfContained-linux-x64.zip
-chmod +x SPF_UI
-./SPF_UI
+chmod +x SFP_UI
+./SFP_UI
 
 # Download the original Steam for Metro (Will create a directory for it so that things stay clean) 
 
@@ -157,7 +157,8 @@ echo "or something!"
 <<lol
 echo "Fine. i'll open Steam for you."
 clear
-flatpak run com.valvesoftware.Steam
+cd "$steaminstall/steam"
+./steam.sh
 lol
 
 # Stops the script
