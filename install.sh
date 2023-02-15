@@ -87,7 +87,7 @@ mkdir -p "$steaminstall/steam/skins/metro"
 # extracted contents of metro to said metro folder
 
 METRO='$steaminstall/steam/skins/metro'
-cp -r * $steaminstall/steam/skins/metro
+cp -r * "$steaminstall/steam/skins/metro"
 rm -rf *
 
 # Downloads the latest release of the Metro Patch
