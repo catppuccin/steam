@@ -141,8 +141,6 @@ sleep 15
 
 # Removes the junk-drawer folder from earlier
 
-cd /home/$USER
-rm -rf junk-drawer
 
 # Little easter egg for those who don't mind waiting about 15 seconds a lot 
 echo "Why're you still here? You"
