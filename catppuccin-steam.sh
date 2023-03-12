@@ -19,7 +19,7 @@ then
 fi
 
 # Make temp directory
-cd $(mktemp -d)
+cd "$(mktemp -d)" || exit 1
 
 # Get the latest release of SFP and unzip it
 mkdir SFP 
