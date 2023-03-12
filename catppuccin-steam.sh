@@ -38,7 +38,7 @@ if [ -d ~/.steam ]
 then
   mkdir -p ~/.steam/steam/skins/
   git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/catppuccin
-  export METRO="~/.steam/steam/skins/catppuccin"
+  export METRO="$HOME/.steam/steam/skins/catppuccin"
 elif [ -d ~/.var/app/com.valvesoftware.Steam ]
 then
   mkdir -p ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins
