@@ -49,7 +49,7 @@ fi
 # Install the metro patch
 cd ../ 
 mkdir UPMetro
-cd UPMetro
+cd UPMetro || exit 1
 git clone https://github.com/redsigma/UPMetroSkin
 cp -r 'Unofficial 4.x patch'/'Main Files'/* "$METRO"
 cd ../ 
