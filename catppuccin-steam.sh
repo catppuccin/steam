@@ -62,5 +62,5 @@ read -r -p "--> " flavor
 cp -r themes/$flavor/* $METRO
 
 # Little thank you message to the installer
-printf "Thank you for installing catppuccin ${flavor} for steam :3"
+echo "Thank you for installing catppuccin ${flavor} for steam :3"
 
