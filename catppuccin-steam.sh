@@ -23,7 +23,7 @@ cd "$(mktemp -d)" || exit 1
 
 # Get the latest release of SFP and unzip it
 mkdir SFP 
-cd SFP 
+cd SFP || exit 1
 curl -s https://api.github.com/repos/PhantomGamers/SFP/releases/latest \
 | grep "SFP_UI-SelfContained-linux-x64.zip" \
 | cut -d : -f 2,3 \
