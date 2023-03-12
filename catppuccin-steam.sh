@@ -43,7 +43,7 @@ elif [ -d ~/.var/app/com.valvesoftware.Steam ]
 then
   mkdir -p ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins
   git clone https://github.com/minischetti/metro-for-steam ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin
-  export METRO="~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
+  export METRO="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
 fi
  
 # Install the metro patch
