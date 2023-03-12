@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/usr/bin/env bash
 
 # Install dependencies
 if [ -f /usr/bin/pacman ] 
