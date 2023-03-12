@@ -30,6 +30,7 @@ curl -s https://api.github.com/repos/PhantomGamers/SFP/releases/latest \
 | tr -d \" \
 | wget -qi -
 unzip *.zip
+chmod +x SFP_UI
 ./SFP_UI 
 
 # Install metro
@@ -62,3 +63,4 @@ cp -r themes/$flavor/* $METRO
 
 # Little thank you message to the installer
 printf "Thank you for installing catppuccin ${flavor} for steam :3"
+
