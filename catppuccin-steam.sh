@@ -59,7 +59,7 @@ git clone https://github.com/catppuccin/steam.git
 cd steam || exit 1
 printf "Which flavor would you like to install?\n 1) mocha\n 2) frappe\n 3) latte\n 4) macchiato"  
 read -r -p "--> " flavor
-cp -r themes/$flavor/* $METRO
+cp -r "themes/$flavor/"* "$METRO"
 
 # Little thank you message to the installer
 echo "Thank you for installing catppuccin ${flavor} for steam :3"
