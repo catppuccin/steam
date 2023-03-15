@@ -58,9 +58,8 @@ fi
 cd ../ 
 mkdir UPMetro
 cd UPMetro || exit 1
-git clone https://github.com/redsigma/UPMetroSkin
-cd UPMetroSkin
-cp -r 'Unofficial 4.x patch'/'Main Files'/* "$install_path"
+git clone https://github.com/redsigma/UPMetroSkin ./UPMetroSkin
+cp -r UPMetroSkin/'Unofficial 4.x patch'/'Main Files'/* "$install_path"
 cd ../ 
 
 # Finally install the catppuccin flavor of the users choosing
