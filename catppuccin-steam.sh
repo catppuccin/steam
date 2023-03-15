@@ -44,6 +44,13 @@ then
   mkdir -p ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins
   git clone https://github.com/minischetti/metro-for-steam ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin
   export install_path="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
+else
+  echo "Sorry, i couldn't find your steam installation"
+  echo "Please paste the path to '.steam' below"
+  read -f -p "--> " steampath
+  mkdir "$steampath/steam/skins/catppuccin"
+  git clone https://github.com/minischetti/metro-for-steam "$steampath/steam/skins/catppuccin"
+  export install_path="$steampath/steam/skins/catppuccin"
 fi
  
 # Install the metro patch
