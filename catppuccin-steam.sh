@@ -59,6 +59,7 @@ cd ../
 mkdir UPMetro
 cd UPMetro || exit 1
 git clone https://github.com/redsigma/UPMetroSkin
+cd UPMetroSkin
 cp -r 'Unofficial 4.x patch'/'Main Files'/* "$install_path"
 cd ../ 
 
