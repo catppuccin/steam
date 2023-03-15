@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
 # Install dependencies
-if [ -f /usr/bin/pacman  && ! -f {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ] 
+if [ -f /usr/bin/pacman  && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ] 
 then
-  sudo pacman -S curl wget unzip git
-elif [ -f /usr/bin/emerge && ! -f {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
+  sudo pacman -S wget unzip git
+elif [ -f /usr/bin/emerge && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
 then
-  sudo emerge -av curl wget unzip git
-elif [ -f /usr/bin/apt && ! {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
+  sudo emerge -av wget unzip git
+elif [ -f /usr/bin/apt && ! {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
 then
-   sudo apt-get install curl wget unzip git
+   sudo apt-get install wget unzip git
 elif [ -d /nix ]
 then
-  nix-shell -p curl wget unzip git
-elif [ -f /usr/bin/dnf && ! -f {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
+  nix-shell -p wget unzip git
+elif [ -f /usr/bin/dnf && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
 then
-  sudo dnf install curl wget unzip git
+  sudo dnf install wget unzip git
 else
 then
   readf "Please install the following packages using your package manager:\n curl\n wget\n unzip\n git\n"
@@ -28,11 +28,7 @@ cd "$(mktemp -d)" || exit 1
 # Get the latest release of SFP and unzip it
 mkdir SFP 
 cd SFP || exit 1
-curl -s https://api.github.com/repos/PhantomGamers/SFP/releases/latest \
-| grep "SFP_UI-SelfContained-linux-x64.zip" \
-| cut -d : -f 2,3 \
-| tr -d \" \
-| wget -qi -
+wget https://github.com/PhantomGamers/SFP/releases/download/0.0.14/SFP_UI-SelfContained-linux-x64.zip
 unzip *.zip
 chmod +x SFP_UI
 ./SFP_UI 
