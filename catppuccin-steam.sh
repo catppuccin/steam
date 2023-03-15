@@ -9,7 +9,7 @@ then
   sudo emerge -av curl wget unzip git
 elif [ -f /usr/bin/apt && ! {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
 then
-   sudo apt install curl wget unzip git
+   sudo apt-get install curl wget unzip git
 elif [ -d /nix ]
 then
   nix-shell -p curl wget unzip git
@@ -19,6 +19,7 @@ then
 else
 then
   readf "Please install the following packages using your package manager:\n curl\n wget\n unzip\n git\n"
+  exit
 fi
 
 # Make temp directory
