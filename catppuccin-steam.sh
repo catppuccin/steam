@@ -1,21 +1,24 @@
 #!/usr/bin/env bash
 
 # Install dependencies
-if [ -f /usr/bin/pacman ] 
+if [ -f /usr/bin/pacman  && ! -f {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ] 
 then
   sudo pacman -S curl wget unzip git
-elif [ -f /usr/bin/emerge ]
+elif [ -f /usr/bin/emerge && ! -f {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
 then
   sudo emerge -av curl wget unzip git
-elif [ -f /usr/bin/apt ]
+elif [ -f /usr/bin/apt && ! {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
 then
    sudo apt install curl wget unzip git
 elif [ -d /nix ]
 then
-  sudo nix-shell -p curl wget unzip git
-elif [ -f /usr/bin/dnf ]
+  nix-shell -p curl wget unzip git
+elif [ -f /usr/bin/dnf && ! -f {/usr/bin/curl,/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
 then
   sudo dnf install curl wget unzip git
+else
+then
+  readf "Please install the following packages using your package manager:\n curl\n wget\n unzip\n git\n"
 fi
 
 # Make temp directory
@@ -38,12 +41,12 @@ if [ -d ~/.steam ]
 then
   mkdir -p ~/.steam/steam/skins/
   git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/catppuccin
-  export METRO="$HOME/.steam/steam/skins/catppuccin"
+  export install_path="$HOME/.steam/steam/skins/catppuccin"
 elif [ -d ~/.var/app/com.valvesoftware.Steam ]
 then
   mkdir -p ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins
   git clone https://github.com/minischetti/metro-for-steam ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin
-  export METRO="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
+  export install_path="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
 fi
  
 # Install the metro patch
