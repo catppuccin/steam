@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Install dependencies
 if [ -f /usr/bin/pacman  && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ] 
