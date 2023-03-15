@@ -3,23 +3,22 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Install dependencies
-if [ -f /usr/bin/pacman  && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ] 
+if [[ -f /usr/bin/pacman  && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]]
 then
   sudo pacman -S wget unzip git
-elif [ -f /usr/bin/emerge && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
+elif [[ -f /usr/bin/emerge && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]]
 then
   sudo emerge -av wget unzip git
-elif [ -f /usr/bin/apt && ! {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
+elif [[ -f /usr/bin/apt && ! {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]]
 then
    sudo apt-get install wget unzip git
-elif [ -d /nix ]
+elif [[ -d /nix ]]
 then
   nix-shell -p wget unzip git
-elif [ -f /usr/bin/dnf && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]
+elif [[ -f /usr/bin/dnf && ! -f {/usr/bin/wget,/usr/bin/unzip,/usr/bin/git} ]]
 then
   sudo dnf install wget unzip git
 else
-then
   readf "Please install the following packages using your package manager:\n curl\n wget\n unzip\n git\n"
   exit
 fi
