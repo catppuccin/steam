@@ -56,14 +56,14 @@ fi
  
 # Install the metro patch
 cd ../ 
-git clone https://github.com/redsigma/UPMetroSkin ./UPMetroSkin
-cp -r UPMetroSkin/"Unofficial 4.x patch"/"Main Files [Install First]"/* "$install_path"
+git clone https://github.com/redsigma/UPMetroSkin
+cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
 cd ../ 
 
 # Finally install the catppuccin flavor of the users choosing
 git clone https://github.com/catppuccin/steam.git
 cd steam || exit 1
-printf "Which flavor would you like to install?\n 1) mocha\n 2) frappe\n 3) latte\n 4) macchiato"  
+printf "Which flavor would you like to install?\n 1) mocha\n 2) frappe\n 3) latte\n 4) macchiato\n"  
 read -r -p "--> " flavor
 cp -r "themes/$flavor/"* "$install_path"
 
