@@ -40,7 +40,7 @@ then
   # Get the latest release of SFP and unzip it
   mkdir SFP
   cd SFP || exit 1
-  wget https://github.com/PhantomGamers/SFP/releases/download/0.0.14/SFP_UI-SelfContained-linux-x64.zip
+  wget -q https://github.com/PhantomGamers/SFP/releases/download/0.0.14/SFP_UI-SelfContained-linux-x64.zip
   unzip ./*.zip
   chmod +x SFP_UI
   ./SFP_UI
