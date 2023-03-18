@@ -2,10 +2,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-for main in {"/usr/bin/git","/usr/bin/unzip","/usr/bin/wget"}
-do
-    command -v "$main" || deps=false
-done
 
 function install-theme()
 {
@@ -58,8 +54,12 @@ done
 # Install dependencies
 read -p "Would you like to install the dependencies? " -n 1 -r
 echo
+for main in {"/usr/bin/git","/usr/bin/unzip","/usr/bin/wget"}
+do
+    command -v "$main" || deps=false
+done
 if [[ "$REPLY" =~ ^[Yy]$ ]]
-then
+then 
   dependencies=("wget" "git" "unzip")
   if [ -f "/usr/bin/pacman" ] && [ "$deps" = false ]
   then
