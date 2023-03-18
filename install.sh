@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-for main in index.{"/usr/bin/git","/usr/bin/unzip","/usr/bin/wget"}
+for main in {"/usr/bin/git","/usr/bin/unzip","/usr/bin/wget"}
 do
     command -v "$main" || deps=false
 done
@@ -12,17 +12,12 @@ function install-theme()
 # Make temp directory
 cd "$(mktemp -d)" || exit 1
 
-# Get the latest release of SFP and unzip it
-mkdir SFP
-cd SFP || exit 1
-wget -q https://github.com/PhantomGamers/SFP/releases/download/0.0.14/SFP_UI-SelfContained-linux-x64.zip
-unzip ./*.zip
-chmod +x SFP_UI
-./SFP_UI
-
 # Install metro
 if [ -d ~/.steam ]
 then
+  echo "WARNING: Removing any previous catppuccin theme installation!"
+  echo "Please cancel the script if you don't want this!"
+  sleep 5
   rm -fr ~/.steam/steam/skins/catppuccin
   mkdir -p ~/.steam/steam/skins/
   git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/catppuccin
