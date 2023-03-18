@@ -47,7 +47,7 @@ cd steam || exit 1
 echo "Please select a flavor: "
 select flavor in frappe latte macchiato mocha
 do 
-  cp -r "themes/$flavor/"* "$install_path" || echo "Please input a valid flavor name"
+  cp -r "themes/$flavor/"* "$install_path" || return
   exit
 done
 
