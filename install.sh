@@ -49,6 +49,7 @@ cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$instal
 # Finally install the catppuccin flavor of the users choosing
 git clone https://github.com/catppuccin/steam.git
 cd steam || exit 1
+echo "Please select a flavor: "
 select flavor in frappe latte macchiato mocha
 do 
   cp -r "themes/$flavor/"* "$install_path" || echo "Please input a valid flavor name"
