@@ -47,15 +47,13 @@ cd steam
 ```
 ### Manual installation:
 
-1.  Download [SFP (formerly Steam Friends Patcher)](https://github.com/PhantomGamers/SFP/releases/latest)
-2.  Extract the files, run “SFP_UI”, then press the “Patch” button
-3.  Download the [original metro for steam](https://github.com/minischetti/metro-for-steam/releases/tag/v4.4), extract to `~/.steam/steam/skins/[name]` (linux) or `c:\Program Files\Steam\skins (windows)`. If the skins folder doesn't exist, create it.
-4.  Download the [latest release of the metro patch](https://github.com/redsigma/UPMetroSkin/tags)
-5.  Extract the contents of [Unofficial 4.x patch/Main Files](https://github.com/redsigma/UPMetroSkin/tree/master/Unofficial%204.x%20Patch/Main%20Files%20[Install%20First]) into the folder you put the original metro. Make sure to replace/overwrite, rather than skipping!
-6.  Download your selected theme’s folder, located in [themes/](https://github.com/catppuccin/steam/blob/main/themes)
-7.  Copy all contents of this folder into the folder with metro
-8.  In steam, go to settings->interface, then change skin to the name of your metro folder. If you did this right, steam should prompt you to restart-- press OK, and steam should restart.
-9.  Enjoy your new theme!
+1.  Download the [original metro for steam](https://github.com/minischetti/metro-for-steam/releases/tag/v4.4), extract to `~/.steam/steam/skins/[name]` (linux) or `c:\Program Files\Steam\skins (windows)`. If the skins folder doesn't exist, create it.
+2.  Download the [latest release of the metro patch](https://github.com/redsigma/UPMetroSkin/tags)
+3.  Extract the contents of [Unofficial 4.x patch/Main Files](https://github.com/redsigma/UPMetroSkin/tree/master/Unofficial%204.x%20Patch/Main%20Files%20[Install%20First]) into the folder you put the original metro. Make sure to replace/overwrite, rather than skipping!
+4.  Download your selected theme’s folder, located in [themes/](https://github.com/catppuccin/steam/blob/main/themes)
+5.  Copy all contents of this folder into the folder with metro
+6.  In steam, go to settings->interface, then change skin to the name of your metro folder. If you did this right, steam should prompt you to restart-- press OK, and steam should restart.
+7.  Enjoy your new theme!
 ### NOTE: [steam-library](https://github.com/AikoMidori/steam-library), which the library styling is based on, has strange steps for windows-- until there is a separate implementation that accounts for this, windows users will only be able to style the header, and some of the panels.
 ### NOTE 2: Latte is extremely painful to theme for, so at the moment it isn't nearly as complete as the dark themes.
 
