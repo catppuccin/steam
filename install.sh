@@ -5,49 +5,6 @@ IFS=$'\n\t'
 
 function install-theme()
 {
-# Make temp directory
-cd "$(mktemp -d)" || exit 1
-
-# Install metro
-if [ -d ~/.steam ]
-then 
-read -p "Would you like to remove any previous installation of catppuccin? [Y/n] " -n 1 -r
-  echo 
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
-      rm -fr ~/.steam/steam/skins/catppuccin
-  fi 
-  mkdir -p ~/.steam/steam/skins/
-  git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/catppuccin
-  install_path="$HOME/.steam/steam/skins/catppuccin"
-elif [ -d ~/.var/app/com.valvesoftware.Steam ]
-then 
-  echo "Would you like to remove any previous installation of catppuccin? [Y/n]"
-  echo
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
-    rm -fr ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin
-  fi 
-  mkdir -p ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins
-  git clone https://github.com/minischetti/metro-for-steam ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin
-  install_path="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
-else
-  echo "Sorry, i couldn't find your steam installation"
-  echo "Please paste the path to '.steam' below"
-  echo "EXAMPLE: ~/.local/share/steam"
-  read -f -r "--> " steampath
-  mkdir "$steampath/steam/skins/catppuccin"
-  git clone https://github.com/minischetti/metro-for-steam "$steampath/steam/skins/catppuccin"
-  install_path="$steampath/steam/skins/catppuccin"
-fi
-
-# Install the metro patch
-git clone https://github.com/redsigma/UPMetroSkin
-cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
-
-# Finally install the catppuccin flavor of the users choosing
-git clone https://github.com/catppuccin/steam.git
-cd steam || exit 1
 flavors=(
     'frappe'
     'latte'
@@ -60,6 +17,49 @@ select opt in "${flavors[@]}" ; do
         echo "Please input a valid flavor!"
     }
 done
+# Make temp directory
+cd "$(mktemp -d)" || exit 1
+
+# Install metro
+if [ -d ~/.steam ]
+then 
+read -p "Would you like to remove any previous installation of catppuccin? [Y/n] " -n 1 -r
+  echo 
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+      rm -fr "$HOME/.steam/steam/skins/catppuccin-"*
+  fi 
+  mkdir -p ~/.steam/steam/skins/
+  git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/"catppuccin-$opt"
+  install_path="$HOME/.steam/steam/skins/catppuccin-$opt"
+elif [ -d ~/.var/app/com.valvesoftware.Steam ]
+then 
+  echo "Would you like to remove any previous installation of catppuccin? [Y/n]"
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    rm -fr "$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin-"*
+  fi 
+  mkdir -p ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins
+  git clone https://github.com/minischetti/metro-for-steam ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/"catppuccin-$opt"
+  install_path="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin-$opt"
+else
+  echo "Sorry, i couldn't find your steam installation"
+  echo "Please paste the path to '.steam' below"
+  echo "EXAMPLE: ~/.local/share/steam"
+  read -f -r "--> " steampath
+  mkdir "$steampath/steam/skins/catppuccin"
+  git clone https://github.com/minischetti/metro-for-steam "$steampath/steam/skins/catppuccin-$opt"
+  install_path="$steampath/steam/skins/catppuccin-$opt"
+fi
+
+# Install the metro patch
+git clone https://github.com/redsigma/UPMetroSkin
+cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
+
+# Finally install the catppuccin flavor of the users choosing
+git clone https://github.com/catppuccin/steam.git
+cd steam || exit 1
 cp -fr "themes/$opt"/* "$install_path"
 
   # Little thank you message to the installer
