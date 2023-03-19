@@ -11,7 +11,7 @@ cd "$(mktemp -d)" || exit 1
 # Install metro
 if [ -d ~/.steam ]
 then 
-read -p "Would you like to remove any previous installation of catppuccin? [Y/n]" -n 1 -r
+read -p "Would you like to remove any previous installation of catppuccin? [Y/n] " -n 1 -r
   echo 
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
