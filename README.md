@@ -54,7 +54,7 @@
 
 - [x] Color all pages
 - [ ] Find a way to edit the icons in the header
-- [x] Look into an install script
+- [] Look into an install script
 - [ ] Look into better windows support
 	
 ## 💝 Thanks to
