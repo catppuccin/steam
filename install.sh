@@ -19,7 +19,7 @@ read -p "Would you like to remove any previous installation of catppuccin? [Y/n]
   fi 
   mkdir -p ~/.steam/steam/skins/
   git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/catppuccin
-  export install_path="$HOME/.steam/steam/skins/catppuccin"
+  install_path="$HOME/.steam/steam/skins/catppuccin"
 elif [ -d ~/.var/app/com.valvesoftware.Steam ]
 then 
   echo "Would you like to remove any previous installation of catppuccin? [Y/n]"
@@ -30,7 +30,7 @@ then
   fi 
   mkdir -p ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins
   git clone https://github.com/minischetti/metro-for-steam ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin
-  export install_path="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
+  install_path="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
 else
   echo "Sorry, i couldn't find your steam installation"
   echo "Please paste the path to '.steam' below"
@@ -38,7 +38,7 @@ else
   read -f -r "--> " steampath
   mkdir "$steampath/steam/skins/catppuccin"
   git clone https://github.com/minischetti/metro-for-steam "$steampath/steam/skins/catppuccin"
-  export install_path="$steampath/steam/skins/catppuccin"
+  install_path="$steampath/steam/skins/catppuccin"
 fi
 
 # Install the metro patch
@@ -60,7 +60,7 @@ select opt in "${flavors[@]}" ; do
         echo "Please input a valid flavor!"
     }
 done
-cp -fr "themes/$opt" "$install_path"
+cp -fr "themes/$opt"/* "$install_path"
 
   # Little thank you message to the installer
   echo "Thank you for installing catppuccin ${opt} for steam :3"
