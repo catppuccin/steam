@@ -18,7 +18,7 @@ function install-theme() {
     fi
   done
   # Make temp directory
-  cd "$(mktemp -d)" || exit 1
+  cd "$(mktemp -d)"
 
   # Install metro
   if [ -d ~/.steam ]; then
@@ -31,7 +31,7 @@ function install-theme() {
     git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/"catppuccin-$opt"
     install_path="$HOME/.steam/steam/skins/catppuccin-$opt"
   elif [ -d ~/.var/app/com.valvesoftware.Steam ]; then
-    echo "Would you like to remove any previous installation of catppuccin? [Y/n]"
+    echo "Would you like to remove any previous installation of catppuccin? [y/n]"
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
       rm -fr "$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin-"*
@@ -55,7 +55,7 @@ function install-theme() {
 
   # Finally install the catppuccin flavor of the users choosing
   git clone https://github.com/catppuccin/steam.git
-  cd steam || exit 1
+  cd steam
   cp -fr "themes/$opt"/* "$install_path"
 
   # Little thank you message to the installer
