@@ -31,7 +31,8 @@ function install-theme() {
     git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/"catppuccin-$opt"
     install_path="$HOME/.steam/steam/skins/catppuccin-$opt"
   elif [ -d ~/.var/app/com.valvesoftware.Steam ]; then
-    read -p "Would you like to remove any previous installation of catppuccin? [y/n] \n" -n 1 -r
+    read -p "Would you like to remove any previous installation of catppuccin? [y/n] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
       rm -fr "$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin-"*
     fi
