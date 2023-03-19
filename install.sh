@@ -48,14 +48,14 @@ cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$instal
 # Finally install the catppuccin flavor of the users choosing
 git clone https://github.com/catppuccin/steam.git
 cd steam || exit 1
-options=(
+flavors=(
     'frappe'
     'latte'
     'mocha'
     'macchiato'
 )
 PS3="Please select a flavor (TIP: You can input a number if you'd like): "
-select opt in "${options[@]}" ; do
+select opt in "${flavors[@]}" ; do
     [[ -n $opt ]] && break || {
         echo "Please input a valid flavor!"
     }
