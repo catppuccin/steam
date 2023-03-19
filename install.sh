@@ -10,22 +10,31 @@ cd "$(mktemp -d)" || exit 1
 
 # Install metro
 if [ -d ~/.steam ]
-then
-  echo "WARNING: Removing any previous catppuccin theme installation!"
-  echo "Please cancel the script if you don't want this!"
-  sleep 5
-  rm -fr ~/.steam/steam/skins/catppuccin
+then 
+read -p "Would you like to remove any previous installation of catppuccin? [Y/n]" -n 1 -r
+  echo 
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+      rm -fr ~/.steam/steam/skins/catppuccin
+  fi 
   mkdir -p ~/.steam/steam/skins/
   git clone https://github.com/minischetti/metro-for-steam ~/.steam/steam/skins/catppuccin
   export install_path="$HOME/.steam/steam/skins/catppuccin"
 elif [ -d ~/.var/app/com.valvesoftware.Steam ]
-then
+then 
+  echo "Would you like to remove any previous installation of catppuccin? [Y/n]"
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    rm -fr ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin
+  fi 
   mkdir -p ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins
   git clone https://github.com/minischetti/metro-for-steam ~/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin
   export install_path="$HOME/.var/app/com.valvesoftware.Steam/.steam/steam/skins/catppuccin"
 else
   echo "Sorry, i couldn't find your steam installation"
   echo "Please paste the path to '.steam' below"
+  echo "EXAMPLE: ~/.local/share/steam"
   read -f -r "--> " steampath
   mkdir "$steampath/steam/skins/catppuccin"
   git clone https://github.com/minischetti/metro-for-steam "$steampath/steam/skins/catppuccin"
@@ -33,17 +42,16 @@ else
 fi
 
 # Install the metro patch
-cd ../
 git clone https://github.com/redsigma/UPMetroSkin
 cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
 
 # Finally install the catppuccin flavor of the users choosing
 git clone https://github.com/catppuccin/steam.git
 cd steam || exit 1
-echo "Please select a flavor: "
+echo "Please select a flavor (TIP: You can input a number if you'd like): "
 select flavor in frappe latte macchiato mocha
 do 
-  cp -r "themes/$flavor/"* "$install_path" || return
+  cp -r "themes/$flavor/"* "$install_path" || echo "Please input a valid flavor!" && return
   exit
 done
 
@@ -52,37 +60,52 @@ done
 }
 
 # Install dependencies
-read -p "Would you like to install the dependencies? " -n 1 -r
-echo
-for main in {"/usr/bin/git","/usr/bin/unzip","/usr/bin/wget"}
-do
-    command -v "$main" || deps=false
-done
-if [[ "$REPLY" =~ ^[Yy]$ ]]
-then 
-  dependencies=("wget" "git" "unzip")
-  if [ -f "/usr/bin/pacman" ] && [ "$deps" = false ]
-  then
-    sudo pacman -S "${dependencies[@]}"
-  elif [ -f /usr/bin/emerge ] && [ "$deps" = false ]
-  then
-    sudo emerge -av "${dependencies[@]}"
-  elif [ -f /usr/bin/apt ] && [ "$deps" = false ]
-  then
-     sudo apt-get install "${dependencies[@]}"
-  elif [ -d /nix ]
-  then
-    nix-shell -p "${dependencies[@]}"
-  elif [ -f /usr/bin/dnf ] && [ "$deps" = false ]
-  then
-    sudo dnf install "${dependencies[@]}"
-  else
-    readf "Please install the following packages using your package manager:\n curl\n wget\n unzip\n git\n"
-    exit
-  fi
-  install-theme
-elif [[ ! "$REPLY" =~ ^[Yy]$ ]]
-then
-  install-theme
-fi
+declare -A install_command
+dependencies=("curl" "unzip" "git")
+install_command=(
+    ["apt-get"]="sudo apt-get install"
+    ["dnf"]="sudo dnf install"
+    ["emerge"]="sudo emerge"
+    ["nix-shell"]="nix-shell -p"
+    ["pacman"]="sudo pacman -S"
+)
 
+function check_dependencies() {
+    local pm="$1"
+    local missing=()
+
+    for package in "${dependencies[@]}"; do
+        if ! command -v "$package" &>/dev/null; then
+            missing+=("$package")
+        fi
+    done
+
+    if [ "${#missing[@]}" -gt 0 ]; then
+        echo "==> The following packages are missing:"
+        echo "${missing[@]}"
+        echo ""
+        echo "==> Please install them with:"
+        echo "> ${install_command[$pm]}" "${missing[@]}"
+        exit 1
+      else
+        echo "Installing theme!"
+        install-theme 
+    fi
+}
+
+if command -v apt-get &>/dev/null; then
+    check_dependencies "apt-get"
+elif command -v dnf &>/dev/null; then
+    check_dependencies "dnf"
+elif command -v emerge &>/dev/null; then
+    check_dependencies "emerge"
+elif command -v nix-shell &>/dev/null; then
+    check_dependencies "nix-shell"
+elif command -v pacman &>/dev/null; then
+    check_dependencies "pacman"
+else
+    echo "==> Couldn't determine your package manager, install hints unavailable."
+    echo "==> Please install the following packages, before running the script again:"
+    echo ">" "${dependencies[@]}"
+    exit 1
+fi
