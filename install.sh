@@ -60,7 +60,7 @@ select opt in "${flavors[@]}" ; do
         echo "Please input a valid flavor!"
     }
 done
-cp -fr "themes/$opt"/* "$install_path"
+cp -fr "themes/$opt/*" "$install_path"
 
   # Little thank you message to the installer
   echo "Thank you for installing catppuccin ${opt} for steam :3"
