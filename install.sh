@@ -13,7 +13,11 @@ flavors=(
 )
 PS3="Please select a flavor (TIP: You can input a number if you'd like): "
 select opt in "${flavors[@]}" ; do
-    [[ -n $opt ]] && break || {
+    if [[ -n $opt ]]; then 
+        break 
+    else
+        echo "Please input a valid flavor!"
+    fi
         echo "Please input a valid flavor!"
     }
 done
