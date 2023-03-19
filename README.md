@@ -45,7 +45,7 @@ git clone https://github.com/catppuccin/steam.git
 cd steam
 ./install.sh
 ```
-
+### Manual installation:
 
 1.  Download [SFP (formerly Steam Friends Patcher)](https://github.com/PhantomGamers/SFP/releases/latest)
 2.  Extract the files, run “SFP_UI”, then press the “Patch” button
