@@ -38,7 +38,7 @@
 
 ## Usage
 
-### Automated installation:
+### Automated installation (linux only):
 Just run these commands in your favorite terminal emulator!
 ```bash
 git clone https://github.com/catppuccin/steam.git
