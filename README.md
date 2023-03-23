@@ -39,11 +39,9 @@
 ## Usage
 
 ### Automated installation (linux only):
-Just run these commands in your favorite terminal emulator!
+Just run this command in your favorite terminal emulator!
 ```bash
-git clone https://github.com/catppuccin/steam.git
-cd steam
-./install.sh
+bash <(curl -s https://raw.githubusercontent.com/catppuccin/steam/main/install.sh)
 ```
 ### Manual installation:
 
