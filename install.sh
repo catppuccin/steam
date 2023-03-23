@@ -68,9 +68,13 @@ dependencies=("curl" "unzip" "git")
 install_command=(
   ["apt-get"]="sudo apt-get install"
   ["dnf"]="sudo dnf install"
-  ["emerge"]="sudo emerge"
+  ["emerge"]="sudo emerge -a"
   ["nix-shell"]="nix-shell -p"
   ["pacman"]="sudo pacman -S"
+  ["cave"]="cave resolve"
+  ["apk"]="apk add"
+  ["xbps-install"]="xbps-install"
+  ["brew"]="brew install"
 )
 
 function check_dependencies() {
@@ -106,6 +110,14 @@ elif command -v nix-shell &>/dev/null; then
   check_dependencies "nix-shell"
 elif command -v pacman &>/dev/null; then
   check_dependencies "pacman"
+elif command -v cave &>/dev/null; then
+  check_dependencies "cave"
+elif command -v apk &>/dev/null; then
+  check_dependencies "apk"
+elif command -v xbps-install &>/dev/null; then
+  check_dependencies "xbps-install"
+elif command -v brew &>/dev/null; then
+  check_dependencies "brew"
 else
   echo "==> Couldn't determine your package manager, install hints unavailable."
   echo "==> Please install the following packages, before running the script again:"
