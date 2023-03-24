@@ -37,8 +37,8 @@ function install-theme() {
 			git clone https://github.com/minischetti/metro-for-steam "$install_path"
 			git clone https://github.com/redsigma/UPMetroSkin
 			cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
-			git clone https://github.com/catppuccin/steam.git
-			cp -fr "steam/themes/$opt"/* "$install_path"
+      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/resource/webkit.css" -o "$install_path/resource/webkit.css"
+      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/latte/custom.styles" -o "$install_path/custom.styles"
       echo "Thanks for installing catppuccin $opt for steam :3"
 			break
 		else
@@ -57,15 +57,15 @@ function install-theme() {
 			git clone https://github.com/minischetti/metro-for-steam "$install_path"
 			git clone https://github.com/redsigma/UPMetroSkin
 			cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
-			git clone https://github.com/catppuccin/steam.git
-			cp -fr "steam/themes/$opt"/* "$install_path"
+      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/resource/webkit.css" -o "$install_path/resource/webkit.css"
+      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/latte/custom.styles" -o "$install_path/custom.styles"
       echo "Thanks for installing catppuccin $opt for steam :3"
 		fi
 	done
 }
 
 declare -A install_command
-dependencies=("curl" "unzip" "git")
+dependencies=("curl" "git")
 install_command=(
 	["apt-get"]="sudo apt-get install"
 	["dnf"]="sudo dnf install"
