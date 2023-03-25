@@ -45,7 +45,7 @@ function install-theme() {
 			echo "Sorry, i couldn't find your steam installation."
 			echo "Please input the path to your steam install"
 			echo "e.g. $HOME/steam"
-			read -p -r "==> " steam
+			read -r -p "==> " steam
 			read -p "Would you like to remove any previous installation of catppuccin? [y/n] " -n 1 -r
 			echo
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
