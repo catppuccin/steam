@@ -2,12 +2,34 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+function welcome() {
+echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⣶⣿⣿⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+echo "⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀"
+echo "⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣷⣄⠀⠀⠀⠀"
+echo "⠀⠀⢠⣾⣿⣿⠀⠀⠀⠉⠛⢿⣿⠿⠿⠿⠿⠿⢿⠟⠁⠀⠀⠀⢿⣿⣿⣿⣷⡀⠀⠀"
+echo "⠀⢠⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡄⠀"
+echo "⢀⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣷⠀"
+echo "⢸⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⣠⣶⠶⣶⡄⠀⠀⢠⠾⠿⠶⡄⠀⠈⢿⣿⣿⣿⣿⡇"
+echo "⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠋⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣷"
+echo "⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⠟⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡿"
+echo "⢹⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠦⠴⠓⠚⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡇"
+echo "⠈⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡿⠀"
+echo "⠀⠘⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⠃⠀"
+echo "⠀⠀⠘⢿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⢠⣀⡀⣀⡀⠀⢰⣿⣿⣿⣿⣿⡿⠁⠀⠀"
+echo "⠀⠀⠀⠀⠻⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠸⣿⠟⠻⠇⠀⠀⣿⣿⣿⡿⠋⠀⠀⠀⠀"
+echo "⠀⠀⠀⠀⠀⠀⠙⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠟⠋⠀⠀⠀⠀⠀⠀"
+echo
+echo "Welcome to Catppuccin for steam!"
+echo "Let's get your theme set up :3"
+echo
+}
+
 function install-theme() {
 	flavors=(
-		'frappe'
-		'latte'
-		'mocha'
-		'macchiato'
+		'Frappe'
+		'Latte'
+		'Mocha'
+		'Macchiato'
 	)
 
 	PS3="Please select a flavor (TIP: You can input a number if you'd like): "
@@ -26,7 +48,7 @@ function install-theme() {
 
 	for dir in "${steamdirs[@]}"; do
 		if [ -d "$dir" ]; then
-			read -p "Would you like to remove any previous installation of catppuccin? [y/n] " -n 1 -r
+      read -p "Would you like to remove any previous installation(s) of catppuccin? [y/n] " -n 1 -r
 			echo
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
 				rm -fr "$dir/steam/skins/catppuccin-"*
@@ -34,19 +56,19 @@ function install-theme() {
 			cd "$(mktemp -d)"
 			mkdir -p "$dir/steam/skins/catppuccin-$opt"
 			install_path="$dir/steam/skins/catppuccin-$opt"
-			git clone https://github.com/minischetti/metro-for-steam "$install_path"
-			git clone https://github.com/redsigma/UPMetroSkin
+			git clone https://github.com/minischetti/metro-for-steam "$install_path" --progress 2>&1 | grep "Receiving objects"
+			git clone https://github.com/redsigma/UPMetroSkin --progress 2>&1 | grep "Receiving objects"
 			cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
-      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/resource/webkit.css" -o "$install_path/resource/webkit.css"
-      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/custom.styles" -o "$install_path/custom.styles"
-      echo "Thanks for installing catppuccin $opt for steam :3"
+      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/resource/webkit.css" -o "$install_path/resource/webkit.css" -#
+      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/custom.styles" -o "$install_path/custom.styles" -#
+      echo "Thanks for installing Catppuccin $opt for Steam :D"
 			break
 		else
 			echo "Sorry, i couldn't find your steam installation."
 			echo "Please input the path to your steam install"
 			echo "e.g. $HOME/steam"
 			read -r -p "==> " steam
-			read -p "Would you like to remove any previous installation of catppuccin? [y/n] " -n 1 -r
+      read -p "Would you like to remove any previous installation(s) of catppuccin? [y/n] " -n 1 -r
 			echo
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
 				rm -fr "$steam/steam/skins/catppuccin-"*
@@ -54,12 +76,12 @@ function install-theme() {
 			cd "$(mktemp -d)"
 			mkdir -p "$steam/steam/skins/catppuccin-$opt"
 			install_path="$steam/steam/skins/catppuccin-$opt"
-			git clone https://github.com/minischetti/metro-for-steam "$install_path"
-			git clone https://github.com/redsigma/UPMetroSkin
+			git clone -q https://github.com/minischetti/metro-for-steam "$install_path" --progress 2>&1 | grep "Receiving objects"
+			git clone -q https://github.com/redsigma/UPMetroSkin --progress 2>&1 | grep "Receiving objects"
 			cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
-      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/resource/webkit.css" -o "$install_path/resource/webkit.css"
-      curl --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/custom.styles" -o "$install_path/custom.styles"
-      echo "Thanks for installing catppuccin $opt for steam :3"
+      curl --silent --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/resource/webkit.css" -o "$install_path/resource/webkit.css"
+      curl --silent --url "https://raw.githubusercontent.com/catppuccin/steam/main/themes/$opt/custom.styles" -o "$install_path/custom.styles"
+      echo "Thanks for installing Catppuccin $opt for Steam :D"
 		fi
 	done
 }
@@ -96,7 +118,8 @@ function check_dependencies() {
 		echo "> ${install_command[$pm]}" "${missing[@]}"
 		exit 1
 	else
-		echo "Installing theme!"
+    clear
+    welcome
 		install-theme
 	fi
 }
