@@ -48,14 +48,14 @@ function install-theme() {
 
 	for dir in "${steamdirs[@]}"; do
 		if [ -d "$dir" ]; then
-      read -p "Would you like to remove any previous installation(s) of catppuccin? [y/n] " -n 1 -r
+      read -p "Would you like to remove any previous installation(s) of Catppuccin? [y/n] " -n 1 -r
 			echo
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
-				rm -fr "$dir/steam/skins/catppuccin-"*
+				rm -fr "$dir/steam/skins/[Cc]atppuccin "*
 			fi
 			cd "$(mktemp -d)"
-			mkdir -p "$dir/steam/skins/catppuccin-$opt"
-			install_path="$dir/steam/skins/catppuccin-$opt"
+			mkdir -p "$dir/steam/skins/Catppuccin $opt"
+			install_path="$dir/steam/skins/Catppuccin $opt"
 			git clone https://github.com/minischetti/metro-for-steam "$install_path" --progress 2>&1 | grep "Receiving objects"
 			git clone https://github.com/redsigma/UPMetroSkin --progress 2>&1 | grep "Receiving objects"
 			cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
@@ -68,14 +68,14 @@ function install-theme() {
 			echo "Please input the path to your steam install"
 			echo "e.g. $HOME/steam"
 			read -r -p "==> " steam
-      read -p "Would you like to remove any previous installation(s) of catppuccin? [y/n] " -n 1 -r
+      read -p "Would you like to remove any previous installation(s) of Catppuccin? [y/n] " -n 1 -r
 			echo
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
-				rm -fr "$steam/steam/skins/catppuccin-"*
+				rm -fr "$steam/steam/skins/[Cc]atppuccin "*
 			fi
 			cd "$(mktemp -d)"
-			mkdir -p "$steam/steam/skins/catppuccin-$opt"
-			install_path="$steam/steam/skins/catppuccin-$opt"
+			mkdir -p "$steam/steam/skins/Catppuccin $opt"
+			install_path="$steam/steam/skins/Catppuccin $opt"
 			git clone -q https://github.com/minischetti/metro-for-steam "$install_path" --progress 2>&1 | grep "Receiving objects"
 			git clone -q https://github.com/redsigma/UPMetroSkin --progress 2>&1 | grep "Receiving objects"
 			cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
