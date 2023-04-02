@@ -2,23 +2,25 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+
+
 function welcome() {
-tput setaf 1; echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⣶⣿⣿⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-tput setaf 2; echo "⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀"
-tput setaf 3; echo "⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣷⣄⠀⠀⠀⠀"
-tput setaf 4; echo "⠀⠀⢠⣾⣿⣿⠀⠀⠀⠉⠛⢿⣿⠿⠿⠿⠿⠿⢿⠟⠁⠀⠀⠀⢿⣿⣿⣿⣷⡀⠀⠀"
-tput setaf 5; echo "⠀⢠⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡄⠀"
-tput setaf 6; echo "⢀⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣷⠀"
-tput setaf 7; echo "⢸⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⣠⣶⠶⣶⡄⠀⠀⢠⠾⠿⠶⡄⠀⠈⢿⣿⣿⣿⣿⡇"
-tput setaf 8; echo "⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠋⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣷"
-tput setaf 7; echo "⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⠟⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡿"
-tput setaf 6; echo "⢹⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠦⠴⠓⠚⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡇"
-tput setaf 5; echo "⠈⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡿⠀"
-tput setaf 4; echo "⠀⠘⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⠃⠀"
-tput setaf 3; echo "⠀⠀⠘⢿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⢠⣀⡀⣀⡀⠀⢰⣿⣿⣿⣿⣿⡿⠁⠀⠀"
-tput setaf 2; echo "⠀⠀⠀⠀⠻⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠸⣿⠟⠻⠇⠀⠀⣿⣿⣿⡿⠋⠀⠀⠀⠀"
-tput setaf 1; echo "⠀⠀⠀⠀⠀⠀⠙⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠟⠋⠀⠀⠀⠀⠀⠀"
-tput setaf 7; echo
+tput bold setaf 1; echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⣶⣿⣿⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+tput bold setaf 2; echo "⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀"
+tput bold setaf 3; echo "⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣷⣄⠀⠀⠀⠀"
+tput bold setaf 4; echo "⠀⠀⢠⣾⣿⣿⠀⠀⠀⠉⠛⢿⣿⠿⠿⠿⠿⠿⢿⠟⠁⠀⠀⠀⢿⣿⣿⣿⣷⡀⠀⠀"
+tput bold setaf 5; echo "⠀⢠⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡄⠀"
+tput bold setaf 6; echo "⢀⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣷⠀"
+tput bold setaf 7; echo "⢸⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⣠⣶⠶⣶⡄⠀⠀⢠⠾⠿⠶⡄⠀⠈⢿⣿⣿⣿⣿⡇"
+tput bold setaf 8; echo "⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠋⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣷"
+tput bold setaf 7; echo "⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⠟⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡿"
+tput bold setaf 6; echo "⢹⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠦⠴⠓⠚⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡇"
+tput bold setaf 5; echo "⠈⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡿⠀"
+tput bold setaf 4; echo "⠀⠘⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⠃⠀"
+tput bold setaf 3; echo "⠀⠀⠘⢿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⢠⣀⡀⣀⡀⠀⢰⣿⣿⣿⣿⣿⡿⠁⠀⠀"
+tput bold setaf 2; echo "⠀⠀⠀⠀⠻⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠸⣿⠟⠻⠇⠀⠀⣿⣿⣿⡿⠋⠀⠀⠀⠀"
+tput bold setaf 1; echo "⠀⠀⠀⠀⠀⠀⠙⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠟⠋⠀⠀⠀⠀⠀⠀"
+tput sgr0 setaf 7; echo
 echo "Welcome to Catppuccin for steam!"
 echo "Let's get your theme set up :3  "
 echo
