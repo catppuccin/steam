@@ -51,11 +51,11 @@ function install-theme() {
 			read -p "Would you like to remove any previous installation of Catppuccin? [y/n] " -n 1 -r
 			echo
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
-				rm -fr "$dir/steam/skins/Catppuccin "*
+				rm -fr "$dir/steam/skins/Catppuccin-"*
 			fi
 			cd "$(mktemp -d)"
-			mkdir -p "$dir/steam/skins/Catppuccin $opt"
-			install_path="$dir/steam/skins/Catppuccin $opt"
+			mkdir -p "$dir/steam/skins/Catppuccin-$opt"
+			install_path="$dir/steam/skins/Catppuccin-$opt"
 			git clone https://github.com/minischetti/metro-for-steam "$install_path"
 			git clone https://github.com/redsigma/UPMetroSkin
 			cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
@@ -71,11 +71,11 @@ function install-theme() {
 			read -p "Would you like to remove any previous installation of Catppuccin? [y/n] " -n 1 -r
 			echo
 			if [[ $REPLY =~ ^[Yy]$ ]]; then
-				rm -fr "$steam/steam/skins/[cC]atppuccin "*
+				rm -fr "$steam/steam/skins/[cC]atppuccin-"*
 			fi
 			cd "$(mktemp -d)"
-			mkdir -p "$steam/steam/skins/Catppuccin $opt"
-			install_path="$steam/steam/skins/Catppuccin $opt"
+			mkdir -p "$steam/steam/skins/Catppuccin-$opt"
+			install_path="$steam/steam/skins/Catppuccin-$opt"
 			git clone https://github.com/minischetti/metro-for-steam "$install_path"
 			git clone https://github.com/redsigma/UPMetroSkin
 			cp -r UPMetroSkin/"Unofficial 4.x Patch"/"Main Files [Install First]"/* "$install_path"
