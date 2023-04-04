@@ -2,23 +2,31 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+rose="\033[38;2;237;135;150m"
+orange="\033[38;2;245;169;127m"
+peach="\033[38;2;238;212;159m"
+green="\033[38;2;166;218;149m"
+blue="\033[38;2;125;196;228m"
+pink="\033[38;2;198;160;246m"
+white="\033[38;2;255;255;255m"
+
 function welcome() {
-tput bold setaf 1; echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⣶⣿⣿⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-tput bold setaf 2; echo "⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀"
-tput bold setaf 3; echo "⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣷⣄⠀⠀⠀⠀"
-tput bold setaf 4; echo "⠀⠀⢠⣾⣿⣿⠀⠀⠀⠉⠛⢿⣿⠿⠿⠿⠿⠿⢿⠟⠁⠀⠀⠀⢿⣿⣿⣿⣷⡀⠀⠀"
-tput bold setaf 5; echo "⠀⢠⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡄⠀"
-tput bold setaf 6; echo "⢀⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣷⠀"
-tput bold setaf 7; echo "⢸⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⣠⣶⠶⣶⡄⠀⠀⢠⠾⠿⠶⡄⠀⠈⢿⣿⣿⣿⣿⡇"
-tput bold setaf 8; echo "⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠋⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣷"
-tput bold setaf 7; echo "⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⠟⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡿"
-tput bold setaf 6; echo "⢹⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠦⠴⠓⠚⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⡇"
-tput bold setaf 5; echo "⠈⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡿⠀"
-tput bold setaf 4; echo "⠀⠘⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⠃⠀"
-tput bold setaf 3; echo "⠀⠀⠘⢿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⢠⣀⡀⣀⡀⠀⢰⣿⣿⣿⣿⣿⡿⠁⠀⠀"
-tput bold setaf 2; echo "⠀⠀⠀⠀⠻⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠸⣿⠟⠻⠇⠀⠀⣿⣿⣿⡿⠋⠀⠀⠀⠀"
-tput bold setaf 1; echo "⠀⠀⠀⠀⠀⠀⠙⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠟⠋⠀⠀⠀⠀⠀⠀"
-tput sgr0 setaf 7; echo
+echo -e "${rose} ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⣶⣿⣿⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+echo -e "${orange}⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀"
+echo -e "${peach}⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣷⣄⠀⠀⠀⠀"
+echo -e "${green}⠀⠀⢠⣾⣿⣿⠀⠀⠀⠉⠛⢿⣿⠿⠿⠿⠿⠿⢿⠟⠁⠀⠀⠀⢿⣿⣿⣿⣷⡀⠀⠀"
+echo -e "${blue}⠀⢠⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⡄⠀"
+echo -e "${pink}⢀⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣷⠀"
+echo -e "${rose}⢸⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀${white}⣠⣶⠶⣶⡄⠀⠀⢠⠾⠿⠶⡄⠀${rose}⠈⢿⣿⣿⣿⣿⡇"
+echo -e "${orange}⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀${white}⠋⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀${orange}⠘⣿⣿⣿⣿⣷"
+echo -e "${peach}⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${pink}⠘⠻⠟⠀⠀⠀⠀⠀⠀⠀${peach}⣿⣿⣿⣿⡿"
+echo -e "${green}⢹⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${white}⠐⠦⠴⠓⠚⠀⠀⠀⠀⠀${green}⢠⣿⣿⣿⣿⡇"
+echo -e "${blue}⠈⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡿⠀"
+echo -e "${pink}⠀⠘⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⠃⠀"
+echo -e "${rose}⠀⠀⠘⢿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⢠⣀⡀⣀⡀⠀⢰⣿⣿⣿⣿⣿⡿⠁⠀⠀"
+echo -e "${orange}⠀⠀⠀⠀⠻⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀${rose}⠸⣿⠟⠻⠇⠀⠀⣿⣿⣿⡿⠋⠀⠀⠀⠀"
+echo -e "${peach}⠀⠀⠀⠀⠀⠀⠙⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠟⠋⠀⠀⠀⠀⠀⠀${white}"
+echo
 echo "Welcome to Catppuccin for steam!"
 echo "Let's get your theme set up :3  "
 echo
