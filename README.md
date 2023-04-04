@@ -43,6 +43,11 @@ Just run this command in your favorite terminal emulator!
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/catppuccin/steam/main/install.sh)
 ```
+
+Or, if you use the fish shell, do this:
+```fish
+bash ( curl -s https://raw.githubusercontent.com/catppuccin/steam/main/install.sh | psub )
+```
 ### Manual installation:
 
 1.  Download the [original metro for steam](https://github.com/minischetti/metro-for-steam/releases/tag/v4.4), extract to `~/.steam/steam/skins/[name]` (linux) or `c:\Program Files\Steam\skins (windows)`. If the skins folder doesn't exist, create it.
