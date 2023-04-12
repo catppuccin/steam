@@ -34,10 +34,10 @@ echo
 
 function install-theme() {
 	flavors=(
-		'Frappe'
-		'Latte'
-		'Mocha'
-		'Macchiato'
+		'frappe'
+		'latte'
+		'mocha'
+		'macchiato'
 	)
 
 	PS3="Please select a flavor (TIP: You can input a number if you'd like): "
