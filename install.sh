@@ -106,6 +106,7 @@ install_command=(
 	["apk"]="apk add"
 	["xbps-install"]="xbps-install"
 	["brew"]="brew install"
+  ["zypper"]="zypper in"
 )
 
 function check_dependencies() {
@@ -150,6 +151,8 @@ elif command -v xbps-install &>/dev/null; then
 	check_dependencies "xbps-install"
 elif command -v brew &>/dev/null; then
 	check_dependencies "brew"
+elif command -v zypper &>/dev/null; then
+	check_dependencies "zypper"
 else
 	echo "==> Couldn't determine your package manager, install hints unavailable."
 	echo "==> Please install the following packages, before running the script again:"
