@@ -148,6 +148,8 @@ elif command -v apk &>/dev/null; then
 	check_dependencies "apk"
 elif command -v xbps-install &>/dev/null; then
 	check_dependencies "xbps-install"
+elif command -v eopkg &>/dev/null; then
+	check_dependencies "eopkg"
 elif command -v brew &>/dev/null; then
 	check_dependencies "brew"
 else
