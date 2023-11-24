@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "mkdir -p dist && sass -I node_modules --no-charset --no-source-map src:dist"
   },
   "author": {
     "name": "Catppuccin Org",
