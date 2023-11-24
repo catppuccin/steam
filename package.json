@@ -1,0 +1,19 @@
+{
+  "name": "catppuccin-steam",
+  "version": "1.0.0",
+  "description": "soothing catppuccin theme for the steam client",
+  "repository": "https://github.com/catppuccin/steam",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Catppuccin Org",
+    "email": "core@catppuccin.com"
+  },
+  "dependencies": {
+    "@catppuccin/palette": "^0.2.0",
+    "sass": "^1.69.5"
+  }
+}
