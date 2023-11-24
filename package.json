@@ -6,7 +6,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p dist && sass -I node_modules --no-charset --no-source-map src:dist"
+    "flavor": "mkdir -p dist && sass -I node_modules --no-charset --no-source-map src:dist",
+    "accent": "node build.js && mkdir -p dist && sass -I node_modules --no-charset --no-source-map src:dist && rm src/*/libraryroot-*.custom-*.scss"
   },
   "author": {
     "name": "Catppuccin Org",
