@@ -1,9 +1,66 @@
+// *{  // Disable Shadows
+//   -webkit-box-shadow: none !important;
+//   box-shadow: none !important;
+// }
+
 // Steam top bar
 .steamdesktop_TopBar_3Z7VQ {
-	background: $crust;
+	background: $mantle;
+}
+
+//Steam title bar
+.rootmenu_RootMenuButton_2Uy0B { // Not applying?
+	color: $subtext0;
+}
+.rootmenu_RootMenuButton_2UyOB:hover:not(.rootmenu_Disabled_2hcbl) { // Highlighted
+  color: $subtext1;
+}
+
+// News button
+.titlebarcontrols_AnnouncementsButton_5wILZ {
+  background-color: $surface1;
+  color: $overlay2;
+}
+.titlebarcontrols_AnnouncementsButton_5wILZ:hover {
+  background-color: $overlay1;
+}
+
+// Notifications button
+.titlebarcontrols_NotificationsButton_RtSv3.titlebarcontrols_WasNew_9YK5I, .titlebarcontrols_NotificationsButton_RtSv3.titlebarcontrols_NoNew_3qhGk {
+  background-color: $surface1;
+  color: $overlay2;
+}
+.titlebarcontrols_NotificationsButton_RtSv3.titlebarcontrols_WasNew_9YK5I:not(.titlebarcontrols_Disabled_1QQWj):hover, .titlebarcontrols_NotificationsButton_RtSv3.titlebarcontrols_NoNew_3qhGk:not(.titlebarcontrols_Disabled_1QQWj):hover {
+  background: $overlay1;
+  color: $overlay2;
+}
+
+// Steam title bar account menu
+.titlebarcontrols_AccountMenu_3yD46.online {
+  color: $accent;
+}
+.titlebarcontrols_AccountMenu_3yD46:hover { // Highlighted
+  background-color: $overlay0;
+}
+
+//Steam Super nav
+.supernav_SuperNavMenu_7AlhC .supernav_MenuButton_19axK {
+  color: $text;
+}
+.supernav_SuperNavMenu_7AlhC.supernav_Selected_1gqEj:not(.supernav_Disabled_2cO0H) .supernav_MenuButton_19axK { //Selected
+  color: $accent;
+  text-shadow: 0px 0px 1px $accent;
+}
+.supernav_SuperNavMenu_7AlhC.supernav_Selected_1gqEj:not(.supernav_Disabled_2cO0H) .supernav_MenuButton_19axK::after { //Selected
+  background: $accent;
+}
+
+// Browser bar
+.steamdesktop_BrowserWrapper_1bGew .steamdesktop_URLBar_UkR3s {
+  background: $mantle;
 }
 
 // Steam bottom bar
 .bottombar_BottomBar_3vCzS {
-  background: $accent;
+  background: $mantle;
 }
