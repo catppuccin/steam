@@ -13,7 +13,7 @@
     <a href="https://github.com/catppuccin/steam/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/steam?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
-<p align="center">
+<!-- <p align="center">
 	<img src="https://raw.githubusercontent.com/Dukeatron/steam/main/assets/ss.png"/>
 </p>
 
@@ -58,18 +58,23 @@ bash ( curl -s https://raw.githubusercontent.com/catppuccin/steam/main/install.s
 6.  In steam, go to settings->interface, then change skin to the name of your metro folder. If you did this right, steam should prompt you to restart-- press OK, and steam should restart.
 7.  Enjoy your new theme!
 ### NOTE: [steam-library](https://github.com/AikoMidori/steam-library), which the library styling is based on, has strange steps for windows-- until there is a separate implementation that accounts for this, windows users will only be able to style the header, and some of the panels.
-### NOTE 2: Latte is extremely painful to theme for, so at the moment it isn't nearly as complete as the dark themes.
+### NOTE 2: Latte is extremely painful to theme for, so at the moment it isn't nearly as complete as the dark themes. -->
 
 ## TODO
 
-- [x] Color all pages
+- [x] accent and flavour generation
+- [ ] steam library fully themed
+- [ ] steam friends list/chat fully themed
+- [ ] steam web pages fully themed - will be done on [ctp/userstyles/steam](https://github.com/Catppuccin/userstyles)
+- [ ] steam big picture support (pulling from [ctp/steam-deck](https://github.com/Catppuccin/steam-deck))
+- [ ] Color all pages
 - [ ] Find a way to edit the icons in the header
-- [x] Look into an install script
-- [ ] Look into better windows support
+- [ ] rewrite install script to work with new ui rewrite (linux and windows support) ((maybe automate [SFP](https://github.com/PhantomGamers/SFP) installation?))
 	
 ## 💝 Thanks to
 
-- [Dukeatron2000](https://github.com/Dukeatron)
+- [Dukeatron2000](https://github.com/Dukeatron) original steam ui theme
+- [Kylie](https://github.com/covkie)
 
 &nbsp;
 

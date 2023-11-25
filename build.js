@@ -1,11 +1,17 @@
 const fs = require("fs").promises;
 const path = require("path");
+const { compileString } = require("sass");
 
 const sourceFiles = [
-  "src/Frappe/libraryroot.custom-frappe.scss",
-  "src/Latte/libraryroot.custom-latte.scss",
-  "src/Macchiato/libraryroot.custom-macchiato.scss",
-  "src/Mocha/libraryroot.custom-mocha.scss",
+  "src/frappe/libraryroot.custom-frappe.scss",
+  "src/latte/libraryroot.custom-latte.scss",
+  "src/macchiato/libraryroot.custom-macchiato.scss",
+  "src/mocha/libraryroot.custom-mocha.scss",
+
+  "src/frappe/friends.custom-frappe.scss",
+  "src/latte/friends.custom-latte.scss",
+  "src/macchiato/friends.custom-macchiato.scss",
+  "src/mocha/friends.custom-mocha.scss",
 ];
 
 const accents = [
@@ -43,17 +49,19 @@ async function generateAccents(sourceFilePath) {
   );
 }
 
-// replace brand and write to separate file
+// replace accent and write to a separate file in a subfolder
 async function generateAccent(sourceFileData, sourceFilePath, accent) {
   const modifiedFileContent = sourceFileData.replace(
     /\$accent: .*;/gm,
     `$accent: \$${accent};`
   );
-  const outputFileName = sourceFilePath
-    .split(".")
-    .map((s, i) => (i === 0 ? s.concat(`-${accent}`) : s))
-    .join(".");
-  const outputFilePath = path.join(__dirname, outputFileName);
+
+  // Create a subfolder for each accent
+  const outputDirName = sourceFilePath.replace(/\/[^/]+$/, `/${accent}`);
+  await fs.mkdir(outputDirName, { recursive: true });
+
+  const outputFileName = path.basename(sourceFilePath.replace(/-(mocha|macchiato|latte|frappe)(\.scss)$/, '$2'));
+  const outputFilePath = path.join(outputDirName, outputFileName);
   await fs.writeFile(outputFilePath, modifiedFileContent);
-  console.log(`Generated: ${outputFileName}`);
+  console.log(`Generated: ${outputFilePath}`);
 }

@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "flavor": "mkdir -p dist && sass -I node_modules --no-charset --no-source-map src:dist",
-    "accent": "node build.js && mkdir -p dist && sass -I node_modules --no-charset --no-source-map src:dist && rm src/*/libraryroot-*.custom-*.scss"
+    "accent": "node build.js && mkdir -p dist && sass -I node_modules --no-charset --no-source-map src:dist && rm -rf src/*/*/ && rm dist/*/*.css"
   },
   "author": {
     "name": "Catppuccin Org",

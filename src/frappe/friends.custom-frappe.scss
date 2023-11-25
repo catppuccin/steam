@@ -1,0 +1,5 @@
+@use "@catppuccin/palette/scss/frappe" as *;
+
+$accent: $blue;
+
+@import "../src/friends.scss"
