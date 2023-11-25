@@ -34,11 +34,11 @@
 <details>
 <summary>🌿 Mocha</summary>
 <img src="https://raw.githubusercontent.com/catppuccin/steam/main/assets/mocha.png"/>
-</details>
+</details> -->
 
 ## Usage
 
-### Automated installation (linux only):
+<!-- ### Automated installation (linux only):
 Just run this command in your favorite terminal emulator!
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/catppuccin/steam/main/install.sh)
@@ -47,17 +47,18 @@ bash <(curl -s https://raw.githubusercontent.com/catppuccin/steam/main/install.s
 Or, if you use the fish shell, do this:
 ```fish
 bash ( curl -s https://raw.githubusercontent.com/catppuccin/steam/main/install.sh | psub )
-```
-### Manual installation:
+``` -->
+### Contributing/Manual installation:
+-- make sure you have nodejs and yarn installed
+1.  Clone this repo locally and run yarn install in the project directory then run the `accent` script to generate the flavours and accents.
+2.  Download and install [SFP](https://github.com/PhantomGamers/SFP) (this is used for theming the new steam client)
+3.  Find the flavour - accent combo you'd like to try in the generated dist folder and copy it to `~/.steam/steam/steamui/skins/Catppuccin-[flavour-accent]` (linux) or `c:\Program Files\Steam\steamui\skins\Catppuccin-[flavour-accent] (windows)`. If the skins folder doesn't exist, create it.
+4.  Open SFP and navigate to the settings, then select the theme. After the correct theme is selected navigate to the home menu and click `Start Steam` then `Start Injection`(if Inject on Steam start is not enabled)
 
-1.  Download the [original metro for steam](https://github.com/minischetti/metro-for-steam/releases/tag/v4.4), extract to `~/.steam/steam/skins/[name]` (linux) or `c:\Program Files\Steam\skins (windows)`. If the skins folder doesn't exist, create it.
-2.  Download the [latest release of the metro patch](https://github.com/redsigma/UPMetroSkin/tags)
-3.  Extract the contents of [Unofficial 4.x patch/Main Files](https://github.com/redsigma/UPMetroSkin/tree/master/Unofficial%204.x%20Patch/Main%20Files%20[Install%20First]) into the folder you put the original metro. Make sure to replace/overwrite, rather than skipping!
-4.  Download your selected theme’s folder, located in [themes/](https://github.com/catppuccin/steam/blob/main/themes)
-5.  Copy all contents of this folder into the folder with metro
-6.  In steam, go to settings->interface, then change skin to the name of your metro folder. If you did this right, steam should prompt you to restart-- press OK, and steam should restart.
-7.  Enjoy your new theme!
-### NOTE: [steam-library](https://github.com/AikoMidori/steam-library), which the library styling is based on, has strange steps for windows-- until there is a separate implementation that accounts for this, windows users will only be able to style the header, and some of the panels.
+5. Make changes to the css in _friends/libraryroot.scss if you'd like to contribute.
+
+
+<!-- ### NOTE: [steam-library](https://github.com/AikoMidori/steam-library), which the library styling is based on, has strange steps for windows-- until there is a separate implementation that accounts for this, windows users will only be able to style the header, and some of the panels.
 ### NOTE 2: Latte is extremely painful to theme for, so at the moment it isn't nearly as complete as the dark themes. -->
 
 ## TODO
