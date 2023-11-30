@@ -64,18 +64,18 @@ bash ( curl -s https://raw.githubusercontent.com/catppuccin/steam/main/install.s
 ## TODO
 
 - [x] accent and flavour generation
-- [ ] steam library fully themed
-- [ ] steam friends list/chat fully themed
-- [ ] steam web pages fully themed - will be done on [ctp/userstyles/steam](https://github.com/Catppuccin/userstyles)
-- [ ] steam big picture support (pulling from [ctp/steam-deck](https://github.com/Catppuccin/steam-deck))
-- [ ] Color all pages
-- [ ] Find a way to edit the icons in the header
-- [ ] rewrite install script to work with new ui rewrite (linux and windows support) ((maybe automate [SFP](https://github.com/PhantomGamers/SFP) installation?))
+- [ ] Steam library fully themed
+- [ ] Steam small mode fully themed
+- [ ] Steam friends list/chat fully themed
+- [ ] Steam big picture support (pulling from [ctp/steam-deck](https://github.com/Catppuccin/steam-deck))
+- [ ] Steam web pages fully themed - will be done on [ctp/userstyles/steam](https://github.com/Catppuccin/userstyles)
+- [ ] Rewrite install script to work with new ui rewrite (linux and windows support) ((maybe automate [SFP](https://github.com/PhantomGamers/SFP) installation?))
+- [ ] Optional JS plugin for changing accent (maybe flavour) on the fly
 	
 ## 💝 Thanks to
 
 - [Dukeatron2000](https://github.com/Dukeatron) original steam ui theme
-- [Kylie](https://github.com/covkie)
+- [Kylie 🍪](https://github.com/covkie)
 
 &nbsp;
 

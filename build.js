@@ -1,6 +1,5 @@
 const fs = require("fs").promises;
 const path = require("path");
-const { compileString } = require("sass");
 
 const sourceFiles = [
   "src/frappe/libraryroot.custom-frappe.scss",
