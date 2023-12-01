@@ -1,9 +1,80 @@
-
-.menu_MenuItem_2jXHP.menu_Item_2uiDe:hover {
-  background-color: #dcdedf;
-  color: #3d4450;
+div[class*="menu_MenuItem"][class*="menu_Item"]:hover {
+  background-color: $surface0;
+  color: $accent;
+}
+[class*="DesktopUI"], div[class*="contextmenu_ForceDesktop"] {
+  [class*="contextmenu_contextMenuItem"] {
+    color: $subtext1;
+  }
+}
+div[class*="titlebarcontrols_AccountMenuPopup"] {
+  [class*="titlebarcontrols_AccountName"], [class*="titlebarcontrols_WalletBalance"] {
+    color: rgba($accent, 0.75);
+  }
 }
 
-.DesktopUI .contextmenu_contextMenuItem_pFo3k, .contextmenu_ForceDesktop_7K1n9 .contextmenu_contextMenuItem_pFo3k {
-  color: ;
+div[class*="menu_MenuPopup"] {
+  background: $mantle;
+}
+// Notif menu
+div[class*="standardtemplates_StandardTemplateDesktop"][class*="standardtemplates_Unread"] { //Entry
+  background: $surface0;
+  &:hover {
+    background: $surface1;
+  }
+}
+
+div[class^="titlebarcontrols_NotificationHeader"] [class*="titlebarcontrols_AllNotificationsButton"] { //View all button
+  background: $surface1;
+  color: $subtext1;
+  &:hover {
+    background-color: $overlay0;
+  }
+}
+div[class*="titlebarcontrols_NotificationsMenu"] {
+  color: $text;
+}
+div[class*="titlebarcontrols_EmptyNotificationsBody"] {
+  color: $subtext0 !important;
+}
+
+div[class*="standardtemplates_NewIndicator"] svg {
+  color: $green;
+}
+
+// ██████╗░░█████╗░██████╗░██╗░░░██╗██████╗░░██████╗
+// ██╔══██╗██╔══██╗██╔══██╗██║░░░██║██╔══██╗██╔════╝
+// ██████╔╝██║░░██║██████╔╝██║░░░██║██████╔╝╚█████╗░
+// ██╔═══╝░██║░░██║██╔═══╝░██║░░░██║██╔═══╝░░╚═══██╗
+// ██║░░░░░╚█████╔╝██║░░░░░╚██████╔╝██║░░░░░██████╔╝
+// ╚═╝░░░░░░╚════╝░╚═╝░░░░░░╚═════╝░╚═╝░░░░░╚═════╝░
+
+
+div.ModalPosition_TopBar {
+  background: linear-gradient(to right, $accent, rgba($accent, 0.25));
+}
+
+.DialogContent, .DialogContentTransition {
+  background: $base;
+}
+
+.DialogBodyText {
+  color: $subtext1;
+}
+.DialogCheckbox {
+  color: $crust;
+}
+
+div[class*="changeuserdialog_Dialog"] .DialogToggle_Label {
+  color: $subtext0;
+}
+.DialogHeader {
+  color: $text;
+}
+
+button.DialogButton {
+  color: $surface0;
+  &.Primary {
+  background: $accent;
+  }
 }

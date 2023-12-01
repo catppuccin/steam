@@ -5,12 +5,7 @@
 //Glowy highlight thing
 div[class*="steamdesktop_FocusBar"][class*="steamdesktop_Focused"] {
   display: block;
-  background: linear-gradient(to right, transparent 10%,unquote($accent+"50") 50%, transparent 90%);
-}
-
-.steamdesktop_FocusBar_3pXas.steamdesktop_Focused_2MkHZ {
-  display: block;
-  background: linear-gradient(to right, transparent 10%,unquote($accent+"50") 50%, transparent 90%);
+  background: linear-gradient(to right, transparent 10%,rgba($accent, 0.5) 50%, transparent 90%);
 }
 
 // ████████╗░█████╗░██████╗░  ██████╗░░█████╗░██████╗░
@@ -133,10 +128,6 @@ div[class*="SuperNavMenu"] {
     &::after {  background: $accent;  }
   }
 }
-//Nav arrows
-// [class*="supernav_Arrow"][class*="supernav_Disabled"] {
-//   color: $surface1;
-// }
 [class*="supernav_Arrow"] {
   color: $overlay2;
   &[class*="supernav_Disabled"] {
@@ -146,9 +137,7 @@ div[class*="SuperNavMenu"] {
     color: $accent;
   }
 }
-// [class*="supernav_Arrow"][class*="supernav_Enabled"]:hover {
-//   color: $accent;
-// }
+
 
 // Browser bar
 div[class*="steamdesktop_BrowserWrapper"] div[class*="steamdesktop_URLBar"] {
