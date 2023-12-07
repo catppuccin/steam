@@ -61,10 +61,14 @@ div.ModalPosition_TopBar {
 .DialogBodyText {
   color: $subtext1;
 }
-.DialogCheckbox {
-  color: $crust;
-}
 
+.DialogCheckbox {
+  background-color: $mantle;
+
+  &_Container:hover .DialogCheckbox:not(.Disabled), &:hover:not(.Disabled), &_Container:focus .DialogCheckbox:not(.Disabled), &:focus:not(.Disabled) {
+    background-color: $crust;
+  }
+}
 div[class*="changeuserdialog_Dialog"] .DialogToggle_Label {
   color: $subtext0;
 }
@@ -73,8 +77,12 @@ div[class*="changeuserdialog_Dialog"] .DialogToggle_Label {
 }
 
 button.DialogButton {
-  color: $surface0;
+  color: $overlay0;
   &.Primary {
   background: $accent;
+    &:hover {
+      background: none;
+      background-color: rgba($accent, 0.75);
+    }
   }
 }

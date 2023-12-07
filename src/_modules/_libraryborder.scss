@@ -38,6 +38,14 @@ div[class*="titlebarcontrols_AnnouncementsButton"] {
       color: $overlay2; //Hover
     }
   }
+  &[class*="titlebarcontrols_Active"] {
+    background-color: $accent;
+    color: $crust;
+    &:hover {
+      background-color: rgba($accent, 0.5);
+      color: $overlay2;
+    }
+  }
 }
 
 // Notifications button

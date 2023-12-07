@@ -9,6 +9,9 @@ dist/
 *.sass.map
 *.scss.map
 
+## Dumped css
+css/
+
 ## Node
 # Logs
 logs

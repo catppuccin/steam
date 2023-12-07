@@ -1,20 +1,166 @@
-.steamdesktop_LocalContentContainer_RGNMW .steamdesktop_URLBarReplacement_2Cmrn {
+//background
+div[class*="steamdesktop_LocalContentContainer"] div[class*="steamdesktop_URLBarReplacement"], div[class*="libraryhome_Container"] {
   background: $crust;
 }
-.gamelistbar_GameListHomeAndSearch_2TKEa {
+div[class*="library_LibraryWindowDivider"], div[class*="gamelistbar_GameListHomeAndSearch"] {
   background-color: $crust;
 }
-.library_LibraryWindowDivider_276E6 {
-  background-color: $crust;
-}
-.libraryhome_Container_2gSXC {
-  background: $crust;
-}
-.gamelistbar_Container_3x1Hk {
+div[class*="libraryhome_LibraryHome"], div[class*="gamelistbar_Container"] {
   background-image: none;
   background-color: $base;
 }
-.libraryhome_LibraryHome_3Sb2o {
-  background-image: none;
+
+// Game List
+div[class*="gamelistentry_Container"] {
+  &:hover, &[class*="gamelistentry_HoverOverlay"] {
+    color: $text;
+    background-color: $surface1;
+  }
+  &[class*="gamelistentry_Uninstalled"] {
+    color: $subtext0;
+    &:hover {
+      color: $subtext1;
+    }
+    &[class*="gamelistentry_HoverOverlay"] {
+      color: $subtext1;
+    }
+  }
+  &[class*="gamelistentry_Selected"] {
+    &[class*="gamelistentry_Uninstalled"] {
+      color: $subtext1;
+    }
+    &[class*="gamelistentry_Updating"] {
+      color: $blue;
+    }
+    &[class*="gamelistentry_Installed"] {
+      color: $text;
+    }
+  }
+  &[class*="gamelistentry_Updating"], &[class*="gamelistentry_Synchronizing"], &[class*="gamelistentry_CloudError"], &[class*="gamelistentry_CloudOutOfDate"] {
+    color: $sapphire;
+  }
+  &[class*="gamelistentry_Installed"], &[class*="gamelistentry_InstalledRemotely"] {
+    color: $text;
+  }
+  &[class*="gamelistentry_Running"] {
+    color: $green;
+    div[class*="gamelistentry_DownloadProgress"] {
+      color: rgba($green, 0.75)
+    }
+  }
+  div[class*="gamelistentry_GameListEntryContainer"] {
+    div[class*="gamelistentry_DownloadProgress"] {
+      color: $sky;
+    }
+    div[class*="gamelistentry_DownloadDash"] {
+      color: $overlay1;
+    }
+  }
+}
+div[class*="gamelistentry_Selected"] div[class*="gamelistentry_Container"] {
+  &[class*="gamelistentry_Updating"] {
+    color: $sky;
+  }
+  &[class*="gamelistentry_Uninstalled"] {
+    color: $subtext1;
+  }
+}
+
+//Home
+div[class*="appportrait_LibraryItemActionButton"][class*="appportrait_Play"] { //Most recent play
+  &:not([class*="appportrait_Disabled"]) {
+    background: $green !important;
+    [class*="SVGIcon_Play"] {
+      fill: rgba($overlay0, 0.5);
+    }
+  }
+  &:hover:not([class*="appportrait_Disabled"]) [class*="SVGIcon_Play"] {
+    fill: $surface1;
+  }
+}
+[class*="appportrait_LibraryItemActionButton"] { // Most recent stop
+  background: $blue !important;
+  &:hover:not([class*="appportrait_Disabled"]):not([class*="appportrait_Play"]) {
+    background: $sapphire !important;
+  }
+}
+
+div[class*="appportrait_RecentGameFooter"] {
+  background-color: $overlay2;
+}
+div[class*="libraryhome_UpdatesContainer"] {
+  background: none;
   background-color: $base;
 }
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Kitty Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str_index($string, $search);
+
+  @if $index {
+    @return str_slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+div[class*="gamelistsearchbar_Container"] div[class*="gamelistsearchbar_SearchInput"] .DialogTextInputBase { // Filter
+  background: $surface0;
+
+  //search icon
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="#{str-replace(#{$subtext0}, "#", "%23")}" d="M9.5 16q-2.725 0-4.612-1.888T3 9.5q0-2.725 1.888-4.612T9.5 3q2.725 0 4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7q-.275.275-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16Zm0-2q1.875 0 3.188-1.312T14 9.5q0-1.875-1.312-3.187T9.5 5Q7.625 5 6.313 6.313T5 9.5q0 1.875 1.313 3.188T9.5 14Z"%2F%3E%3C%2Fsvg%3E');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+
+  &:hover {
+    background-color: $crust;
+  }
+}
+
+@mixin filter-icons($col-fi) { // Filter icons
+  svg {
+    fill: $col-fi;
+    path, line, polyline, circle {
+      stroke: $col-fi;
+    }
+  }
+}
+div[class*="gamelistdropdown_Bar"] div[class*="gamelistdropdown_Filters"] div[class*="gamelistdropdown_CheckboxWithImage"] {
+  &:hover {
+    @include filter-icons($overlay2);
+  }
+  @include filter-icons($overlay0);
+  &[class*="gamelistdropdown_Active"] {
+    &:hover {
+      @include filter-icons($sapphire);
+    }
+    @include filter-icons($blue);
+  }
+}
+
+div[class*="gamelistsearchbar_Container"] div[class*="gamelistsearchbar_AdvancedSearchContainer"] {
+  &:not(.gamelistsearchbar_Disabled_1Gjk2):hover {
+    background-color: $overlay0;
+  }
+  div[class*="gamelistsearchbar_AdvancedSearchButton"] svg path {
+      fill: $overlay0;
+  }
+}
+
+  div[class*="gamelistdropdown_Bar"] div[class*="gamelistdropdown_MenuHeader"] { //Search
+  color: $subtext0;
+  background-color: $surface0;
+  &:hover {
+    color: $text;
+    background-color: $overlay0;
+  }
+}
+// .gamelistsectionheader_Container_2sYIg { //category splitter
+//   background: none;
+//   backround-coplor: overlay
